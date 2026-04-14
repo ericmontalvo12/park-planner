@@ -1,0 +1,56 @@
+{
+  "expo": {
+    "name": "Park Planner",
+    "slug": "park-planner",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "parkplanner",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "config": {
+        "googleMapsApiKey": "YOUR_GOOGLE_MAPS_API_KEY"
+      },
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "Park Planner uses your location to find nearby parks."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#2D7D46"
+      },
+      "config": {
+        "googleMaps": {
+          "apiKey": "YOUR_GOOGLE_MAPS_API_KEY"
+        }
+      },
+      "permissions": [
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.ACCESS_COARSE_LOCATION"
+      ]
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Park Planner uses your location to find nearby parks."
+        }
+      ],
+      [
+        "expo-sqlite",
+        {
+          "enableFTS": false
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
