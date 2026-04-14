@@ -14,7 +14,15 @@ import {
 import { useLocalSearchParams } from 'expo-router';
 import { useSQLiteContext } from 'expo-sqlite';
 import { Image } from 'expo-image';
-import MapView, { Marker } from 'react-native-maps';
+let MapView: React.ComponentType<any> | null = null;
+let Marker: React.ComponentType<any> | null = null;
+try {
+  const maps = require('react-native-maps');
+  MapView = maps.default;
+  Marker = maps.Marker;
+} catch {
+  // react-native-maps not available in Expo Go — needs a dev build
+}
 import { Ionicons } from '@expo/vector-icons';
 import Colors from '../../constants/Colors';
 import { getParkById } from '../../services/parkService';
@@ -195,25 +203,33 @@ export default function ParkDetailScreen() {
         {park.latitude != null && park.longitude != null ? (
           <View style={[styles.section, { borderColor: colors.border }]}>
             <Text style={[styles.sectionTitle, { color: colors.text }]}>Location</Text>
-            <MapView
-              style={styles.map}
-              initialRegion={{
-                latitude: park.latitude,
-                longitude: park.longitude,
-                latitudeDelta: 0.5,
-                longitudeDelta: 0.5,
-              }}
-              scrollEnabled={false}
-              zoomEnabled={false}
-              pitchEnabled={false}
-              rotateEnabled={false}
-            >
-              <Marker
-                coordinate={{ latitude: park.latitude, longitude: park.longitude }}
-                title={park.fullName}
-              />
-            </MapView>
-
+            {MapView && Marker ? (
+              <MapView
+                style={styles.map}
+                initialRegion={{
+                  latitude: park.latitude,
+                  longitude: park.longitude,
+                  latitudeDelta: 0.5,
+                  longitudeDelta: 0.5,
+                }}
+                scrollEnabled={false}
+                zoomEnabled={false}
+                pitchEnabled={false}
+                rotateEnabled={false}
+              >
+                <Marker
+                  coordinate={{ latitude: park.latitude, longitude: park.longitude }}
+                  title={park.fullName}
+                />
+              </MapView>
+            ) : (
+              <View style={[styles.mapPlaceholder, { backgroundColor: colors.card, borderColor: colors.border }]}>
+                <Ionicons name="map-outline" size={32} color={colors.subtext} />
+                <Text style={[styles.mapPlaceholderText, { color: colors.subtext }]}>
+                  {`${park.latitude?.toFixed(4)}, ${park.longitude?.toFixed(4)}`}
+                </Text>
+              </View>
+            )}
             <TouchableOpacity
               style={[styles.mapsButton, { backgroundColor: colors.tint }]}
               onPress={() => openInMaps(park.latitude!, park.longitude!, park.fullName)}
@@ -335,6 +351,18 @@ const styles = StyleSheet.create({
     height: 200,
     borderRadius: 12,
     overflow: 'hidden',
+  },
+  mapPlaceholder: {
+    width: '100%',
+    height: 120,
+    borderRadius: 12,
+    borderWidth: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 6,
+  },
+  mapPlaceholderText: {
+    fontSize: 13,
   },
   mapsButton: {
     flexDirection: 'row',
