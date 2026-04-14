@@ -6,6 +6,7 @@
     "orientation": "portrait",
     "scheme": "parkplanner",
     "userInterfaceStyle": "automatic",
+    "sdkVersion": "55.0.0",
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
