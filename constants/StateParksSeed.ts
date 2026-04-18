@@ -30,6 +30,28 @@ const SEEDS: SeedPark[] = [
   { id: 'seed_al_blakeley', source: 'state', fullName: 'Historic Blakeley State Park', stateCodes: 'AL', latitude: 30.7257, longitude: -87.8671, designation: 'State Historic Park' },
   { id: 'seed_al_brierfield', source: 'state', fullName: 'Brierfield Ironworks Historical State Park', stateCodes: 'AL', latitude: 33.0437, longitude: -86.9376, designation: 'State Historic Park' },
   { id: 'seed_al_tannehill', source: 'state', fullName: 'Tannehill Ironworks Historical State Park', stateCodes: 'AL', latitude: 33.3616, longitude: -87.0785, designation: 'State Historic Park' },
+
+  // ── Alaska ───────────────────────────────────────────────────────────────
+  { id: 'seed_ak_chugach', source: 'state', fullName: 'Chugach State Park', stateCodes: 'AK', latitude: 61.1670, longitude: -149.3530, designation: 'State Park' },
+  { id: 'seed_ak_denali', source: 'state', fullName: 'Denali State Park', stateCodes: 'AK', latitude: 62.5357, longitude: -150.1476, designation: 'State Park' },
+  { id: 'seed_ak_wood_tikchik', source: 'state', fullName: 'Wood-Tikchik State Park', stateCodes: 'AK', latitude: 59.6972, longitude: -158.6528, designation: 'State Park' },
+  { id: 'seed_ak_kachemak_bay', source: 'state', fullName: 'Kachemak Bay State Park', stateCodes: 'AK', latitude: 59.5975, longitude: -151.2125, designation: 'State Park' },
+  { id: 'seed_ak_lake_aleknagik', source: 'state', fullName: 'Lake Aleknagik State Recreation Area', stateCodes: 'AK', latitude: 59.2833, longitude: -158.6167, designation: 'State Recreation Area' },
+  { id: 'seed_ak_nancy_lake', source: 'state', fullName: 'Nancy Lake State Recreation Area', stateCodes: 'AK', latitude: 61.6803, longitude: -150.0508, designation: 'State Recreation Area' },
+  { id: 'seed_ak_chena_river', source: 'state', fullName: 'Chena River State Recreation Area', stateCodes: 'AK', latitude: 64.7500, longitude: -146.5000, designation: 'State Recreation Area' },
+  { id: 'seed_ak_delta', source: 'state', fullName: 'Delta State Recreation Site', stateCodes: 'AK', latitude: 64.0380, longitude: -145.7276, designation: 'State Recreation Area' },
+  { id: 'seed_ak_eklutna_lake', source: 'state', fullName: 'Eklutna Lake State Recreation Area', stateCodes: 'AK', latitude: 61.4494, longitude: -149.1550, designation: 'State Recreation Area' },
+  { id: 'seed_ak_finger_lake', source: 'state', fullName: 'Finger Lake State Recreation Area', stateCodes: 'AK', latitude: 61.6167, longitude: -149.4833, designation: 'State Recreation Area' },
+  { id: 'seed_ak_keystone_canyon', source: 'state', fullName: 'Keystone Canyon State Recreation Site', stateCodes: 'AK', latitude: 61.3700, longitude: -145.7200, designation: 'State Recreation Area' },
+  { id: 'seed_ak_halibut_point', source: 'state', fullName: 'Halibut Point State Recreation Site', stateCodes: 'AK', latitude: 57.0736, longitude: -135.3697, designation: 'State Recreation Area' },
+  { id: 'seed_ak_williwaw', source: 'state', fullName: 'Williwaw State Recreation Site', stateCodes: 'AK', latitude: 60.8167, longitude: -148.9167, designation: 'State Recreation Area' },
+  { id: 'seed_ak_totem_bight', source: 'state', fullName: 'Totem Bight State Historical Park', stateCodes: 'AK', latitude: 55.4192, longitude: -131.7384, designation: 'State Historic Park' },
+  { id: 'seed_ak_independence_mine', source: 'state', fullName: 'Independence Mine State Historical Park', stateCodes: 'AK', latitude: 61.7714, longitude: -149.2983, designation: 'State Historic Park' },
+  { id: 'seed_ak_big_delta', source: 'state', fullName: 'Big Delta State Historical Park', stateCodes: 'AK', latitude: 64.1533, longitude: -145.8367, designation: 'State Historic Park' },
+  { id: 'seed_ak_shoup_bay', source: 'state', fullName: 'Shoup Bay State Marine Park', stateCodes: 'AK', latitude: 61.1200, longitude: -146.5500, designation: 'State Marine Park' },
+  { id: 'seed_ak_surprise_cove', source: 'state', fullName: 'Surprise Cove State Marine Park', stateCodes: 'AK', latitude: 60.9167, longitude: -148.1667, designation: 'State Marine Park' },
+  { id: 'seed_ak_decision_point', source: 'state', fullName: 'Decision Point State Marine Park', stateCodes: 'AK', latitude: 60.9833, longitude: -148.3000, designation: 'State Marine Park' },
+  { id: 'seed_ak_halibut_cove', source: 'state', fullName: 'Halibut Cove State Marine Park', stateCodes: 'AK', latitude: 59.5950, longitude: -151.2167, designation: 'State Marine Park' },
 ];
 
 export function toFullPark(s: SeedPark): Park {
