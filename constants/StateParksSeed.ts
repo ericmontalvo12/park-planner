@@ -216,6 +216,23 @@ const SEEDS: SeedPark[] = [
   { id: 'seed_ct_meshomasic', source: 'state', fullName: 'Meshomasic State Forest', stateCodes: 'CT', latitude: 41.6167, longitude: -72.4500, designation: 'State Forest' },
   { id: 'seed_ct_gillette_castle', source: 'state', fullName: 'Gillette Castle State Park', stateCodes: 'CT', latitude: 41.4333, longitude: -72.4333, designation: 'State Historic Park' },
   { id: 'seed_ct_fort_trumbull', source: 'state', fullName: 'Fort Trumbull State Park', stateCodes: 'CT', latitude: 41.3500, longitude: -72.1000, designation: 'State Historic Park' },
+
+  // ── Delaware ─────────────────────────────────────────────────────────────
+  { id: 'seed_de_cape_henlopen', source: 'state', fullName: 'Cape Henlopen State Park', stateCodes: 'DE', latitude: 38.7897, longitude: -75.1028, designation: 'State Park' },
+  { id: 'seed_de_delaware_seashore', source: 'state', fullName: 'Delaware Seashore State Park', stateCodes: 'DE', latitude: 38.6167, longitude: -75.0611, designation: 'State Park' },
+  { id: 'seed_de_fenwick_island', source: 'state', fullName: 'Fenwick Island State Park', stateCodes: 'DE', latitude: 38.4514, longitude: -75.0519, designation: 'State Park' },
+  { id: 'seed_de_harrington_beach', source: 'state', fullName: 'Harrington Beach State Park', stateCodes: 'DE', latitude: 38.9167, longitude: -75.5833, designation: 'State Park' },
+  { id: 'seed_de_brandywine_creek', source: 'state', fullName: 'Brandywine Creek State Park', stateCodes: 'DE', latitude: 39.7833, longitude: -75.5500, designation: 'State Park' },
+  { id: 'seed_de_white_clay_creek', source: 'state', fullName: 'White Clay Creek State Park', stateCodes: 'DE', latitude: 39.7000, longitude: -75.7500, designation: 'State Park' },
+  { id: 'seed_de_lums_pond', source: 'state', fullName: 'Lums Pond State Park', stateCodes: 'DE', latitude: 39.5500, longitude: -75.7333, designation: 'State Park' },
+  { id: 'seed_de_killens_pond', source: 'state', fullName: 'Killens Pond State Park', stateCodes: 'DE', latitude: 38.9833, longitude: -75.5667, designation: 'State Park' },
+  { id: 'seed_de_trap_pond', source: 'state', fullName: 'Trap Pond State Park', stateCodes: 'DE', latitude: 38.5333, longitude: -75.4833, designation: 'State Park' },
+  { id: 'seed_de_bellevue', source: 'state', fullName: 'Bellevue State Park', stateCodes: 'DE', latitude: 39.7833, longitude: -75.4833, designation: 'State Park' },
+  { id: 'seed_de_holts_landing', source: 'state', fullName: 'Holts Landing State Park', stateCodes: 'DE', latitude: 38.5500, longitude: -75.1667, designation: 'State Park' },
+  { id: 'seed_de_fort_delaware', source: 'state', fullName: 'Fort Delaware State Park', stateCodes: 'DE', latitude: 39.5781, longitude: -75.5681, designation: 'State Historic Park' },
+  { id: 'seed_de_fort_dupont', source: 'state', fullName: 'Fort DuPont State Park', stateCodes: 'DE', latitude: 39.5750, longitude: -75.5833, designation: 'State Historic Park' },
+  { id: 'seed_de_auburn_valley', source: 'state', fullName: 'Auburn Valley State Park', stateCodes: 'DE', latitude: 39.7833, longitude: -75.6500, designation: 'State Historic Park' },
+  { id: 'seed_de_blackbird_forest', source: 'state', fullName: 'Blackbird State Forest', stateCodes: 'DE', latitude: 39.3667, longitude: -75.6333, designation: 'State Forest' },
 ];
 
 export function toFullPark(s: SeedPark): Park {
