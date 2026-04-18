@@ -336,6 +336,33 @@ const SEEDS: SeedPark[] = [
   { id: 'seed_hi_iolani_palace', source: 'state', fullName: 'Iolani Palace State Monument', stateCodes: 'HI', latitude: 21.3063, longitude: -157.8594, designation: 'State Historic Park' },
   { id: 'seed_hi_kealakekua_bay', source: 'state', fullName: 'Kealakekua Bay State Historical Park', stateCodes: 'HI', latitude: 19.4767, longitude: -155.9220, designation: 'State Historic Park' },
   { id: 'seed_hi_lapakahi', source: 'state', fullName: 'Lapakahi State Historical Park', stateCodes: 'HI', latitude: 20.1667, longitude: -155.9000, designation: 'State Historic Park' },
+
+  // ── Idaho ────────────────────────────────────────────────────────────────
+  { id: 'seed_id_farragut', source: 'state', fullName: 'Farragut State Park', stateCodes: 'ID', latitude: 47.9667, longitude: -116.6167, designation: 'State Park' },
+  { id: 'seed_id_hells_gate', source: 'state', fullName: 'Hells Gate State Park', stateCodes: 'ID', latitude: 46.3833, longitude: -117.0500, designation: 'State Park' },
+  { id: 'seed_id_bruneau_dunes', source: 'state', fullName: 'Bruneau Dunes State Park', stateCodes: 'ID', latitude: 42.8833, longitude: -115.7167, designation: 'State Park' },
+  { id: 'seed_id_lake_cascade', source: 'state', fullName: 'Lake Cascade State Park', stateCodes: 'ID', latitude: 44.5333, longitude: -116.0500, designation: 'State Park' },
+  { id: 'seed_id_ponderosa', source: 'state', fullName: 'Ponderosa State Park', stateCodes: 'ID', latitude: 44.5596, longitude: -116.1236, designation: 'State Park' },
+  { id: 'seed_id_heyburn', source: 'state', fullName: 'Heyburn State Park', stateCodes: 'ID', latitude: 47.3500, longitude: -116.7667, designation: 'State Park' },
+  { id: 'seed_id_dworshak', source: 'state', fullName: 'Dworshak State Park', stateCodes: 'ID', latitude: 46.4833, longitude: -116.1667, designation: 'State Park' },
+  { id: 'seed_id_round_lake', source: 'state', fullName: 'Round Lake State Park', stateCodes: 'ID', latitude: 48.1167, longitude: -116.5833, designation: 'State Park' },
+  { id: 'seed_id_winchester_lake', source: 'state', fullName: 'Winchester Lake State Park', stateCodes: 'ID', latitude: 46.2333, longitude: -116.6333, designation: 'State Park' },
+  { id: 'seed_id_massacre_rocks', source: 'state', fullName: 'Massacre Rocks State Park', stateCodes: 'ID', latitude: 42.7000, longitude: -112.9833, designation: 'State Park' },
+  { id: 'seed_id_lake_walcott', source: 'state', fullName: 'Lake Walcott State Park', stateCodes: 'ID', latitude: 42.6333, longitude: -113.7667, designation: 'State Park' },
+  { id: 'seed_id_castle_rocks', source: 'state', fullName: 'Castle Rocks State Park', stateCodes: 'ID', latitude: 42.0833, longitude: -113.6833, designation: 'State Park' },
+  { id: 'seed_id_city_of_rocks', source: 'state', fullName: 'City of Rocks State Park', stateCodes: 'ID', latitude: 42.0667, longitude: -113.7167, designation: 'State Park' },
+  { id: 'seed_id_bear_lake', source: 'state', fullName: 'Bear Lake State Park', stateCodes: 'ID', latitude: 42.0833, longitude: -111.2833, designation: 'State Park' },
+  { id: 'seed_id_malad_gorge', source: 'state', fullName: 'Malad Gorge State Park', stateCodes: 'ID', latitude: 42.8000, longitude: -114.9167, designation: 'State Park' },
+  { id: 'seed_id_thousand_springs', source: 'state', fullName: 'Thousand Springs State Park', stateCodes: 'ID', latitude: 42.7833, longitude: -114.9167, designation: 'State Park' },
+  { id: 'seed_id_niagara_springs', source: 'state', fullName: 'Niagara Springs State Park', stateCodes: 'ID', latitude: 42.7500, longitude: -114.8833, designation: 'State Park' },
+  { id: 'seed_id_eagle_island', source: 'state', fullName: 'Eagle Island State Park', stateCodes: 'ID', latitude: 43.6833, longitude: -116.3833, designation: 'State Park' },
+  { id: 'seed_id_lucky_peak', source: 'state', fullName: 'Lucky Peak State Park', stateCodes: 'ID', latitude: 43.5500, longitude: -116.0000, designation: 'State Park' },
+  { id: 'seed_id_priest_lake', source: 'state', fullName: 'Priest Lake State Park', stateCodes: 'ID', latitude: 48.5500, longitude: -116.8333, designation: 'State Park' },
+  { id: 'seed_id_henrys_lake', source: 'state', fullName: "Henry's Lake State Park", stateCodes: 'ID', latitude: 44.6167, longitude: -111.3833, designation: 'State Park' },
+  { id: 'seed_id_smith_ferry', source: 'state', fullName: 'Smith Ferry State Park Area', stateCodes: 'ID', latitude: 44.3667, longitude: -116.0833, designation: 'State Recreation Area' },
+  { id: 'seed_id_heyburn_riverside', source: 'state', fullName: 'Heyburn Riverside Area', stateCodes: 'ID', latitude: 42.5500, longitude: -113.7667, designation: 'State Recreation Area' },
+  { id: 'seed_id_three_island_crossing', source: 'state', fullName: 'Three Island Crossing State Park', stateCodes: 'ID', latitude: 42.9500, longitude: -115.3000, designation: 'State Historic Park' },
+  { id: 'seed_id_old_mission', source: 'state', fullName: 'Old Mission State Park', stateCodes: 'ID', latitude: 47.5500, longitude: -116.3833, designation: 'State Historic Park' },
 ];
 
 export function toFullPark(s: SeedPark): Park {
