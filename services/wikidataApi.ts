@@ -1,7 +1,7 @@
 import { type SQLiteDatabase } from 'expo-sqlite';
 import { SEEDS, toFullPark } from '../constants/StateParksSeed';
 
-const SEED_KEY = 'seed_loaded_v1';
+const SEED_KEY = 'seed_loaded_v2';
 
 async function isSeedLoaded(db: SQLiteDatabase): Promise<boolean> {
   const row = await db.getFirstAsync<{ value: string }>(
@@ -20,10 +20,13 @@ export async function syncStateParksFromWikidata(
   progressCallback?.('Loading state parks…');
   const now = Date.now();
 
+  // Wipe all existing state parks so seed is the authoritative list
+  await db.runAsync("DELETE FROM parks WHERE source = 'state'");
+
   for (const seed of SEEDS) {
     const park = toFullPark(seed);
     await db.runAsync(
-      `INSERT OR IGNORE INTO parks
+      `INSERT INTO parks
         (id, source, full_name, description, state_codes, latitude, longitude,
          designation, image_url, activities, entrance_fee_cents, raw_json, last_synced)
        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
