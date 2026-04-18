@@ -191,6 +191,31 @@ const SEEDS: SeedPark[] = [
   { id: 'seed_co_trinidad_lake', source: 'state', fullName: 'Trinidad Lake State Park', stateCodes: 'CO', latitude: 37.1500, longitude: -104.5667, designation: 'State Park' },
   { id: 'seed_co_vega', source: 'state', fullName: 'Vega State Park', stateCodes: 'CO', latitude: 39.2333, longitude: -107.7833, designation: 'State Park' },
   { id: 'seed_co_yampa_river', source: 'state', fullName: 'Yampa River State Park', stateCodes: 'CO', latitude: 40.4833, longitude: -107.3500, designation: 'State Park' },
+
+  // ── Connecticut ──────────────────────────────────────────────────────────
+  { id: 'seed_ct_hammonasset_beach', source: 'state', fullName: 'Hammonasset Beach State Park', stateCodes: 'CT', latitude: 41.2667, longitude: -72.5667, designation: 'State Park' },
+  { id: 'seed_ct_rocky_neck', source: 'state', fullName: 'Rocky Neck State Park', stateCodes: 'CT', latitude: 41.3167, longitude: -72.2167, designation: 'State Park' },
+  { id: 'seed_ct_sherwood_island', source: 'state', fullName: 'Sherwood Island State Park', stateCodes: 'CT', latitude: 41.1167, longitude: -73.3333, designation: 'State Park' },
+  { id: 'seed_ct_silver_sands', source: 'state', fullName: 'Silver Sands State Park', stateCodes: 'CT', latitude: 41.2167, longitude: -73.0667, designation: 'State Park' },
+  { id: 'seed_ct_macedonia_brook', source: 'state', fullName: 'Macedonia Brook State Park', stateCodes: 'CT', latitude: 41.7333, longitude: -73.4833, designation: 'State Park' },
+  { id: 'seed_ct_talcott_mountain', source: 'state', fullName: 'Talcott Mountain State Park', stateCodes: 'CT', latitude: 41.8667, longitude: -72.8167, designation: 'State Park' },
+  { id: 'seed_ct_devils_hopyard', source: 'state', fullName: "Devil's Hopyard State Park", stateCodes: 'CT', latitude: 41.4667, longitude: -72.3333, designation: 'State Park' },
+  { id: 'seed_ct_kent_falls', source: 'state', fullName: 'Kent Falls State Park', stateCodes: 'CT', latitude: 41.7667, longitude: -73.4167, designation: 'State Park' },
+  { id: 'seed_ct_wadsworth_falls', source: 'state', fullName: 'Wadsworth Falls State Park', stateCodes: 'CT', latitude: 41.5167, longitude: -72.7167, designation: 'State Park' },
+  { id: 'seed_ct_collis_huntington', source: 'state', fullName: 'Collis P. Huntington State Park', stateCodes: 'CT', latitude: 41.3167, longitude: -73.3833, designation: 'State Park' },
+  { id: 'seed_ct_sleeping_giant', source: 'state', fullName: 'Sleeping Giant State Park', stateCodes: 'CT', latitude: 41.4167, longitude: -72.9000, designation: 'State Park' },
+  { id: 'seed_ct_lake_waramaug', source: 'state', fullName: 'Lake Waramaug State Park', stateCodes: 'CT', latitude: 41.7167, longitude: -73.3667, designation: 'State Park' },
+  { id: 'seed_ct_black_rock', source: 'state', fullName: 'Black Rock State Park', stateCodes: 'CT', latitude: 41.5667, longitude: -73.1167, designation: 'State Park' },
+  { id: 'seed_ct_burr_pond', source: 'state', fullName: 'Burr Pond State Park', stateCodes: 'CT', latitude: 41.8833, longitude: -73.0500, designation: 'State Park' },
+  { id: 'seed_ct_bigelow_hollow', source: 'state', fullName: 'Bigelow Hollow State Park', stateCodes: 'CT', latitude: 41.9833, longitude: -72.1167, designation: 'State Park' },
+  { id: 'seed_ct_hopeville_pond', source: 'state', fullName: 'Hopeville Pond State Park', stateCodes: 'CT', latitude: 41.5667, longitude: -71.9333, designation: 'State Park' },
+  { id: 'seed_ct_hammonasset_preserve', source: 'state', fullName: 'Hammonasset Natural Area Preserve', stateCodes: 'CT', latitude: 41.2667, longitude: -72.5500, designation: 'State Natural Area' },
+  { id: 'seed_ct_pachaug', source: 'state', fullName: 'Pachaug State Forest', stateCodes: 'CT', latitude: 41.5667, longitude: -71.8833, designation: 'State Forest' },
+  { id: 'seed_ct_natchaug', source: 'state', fullName: 'Natchaug State Forest', stateCodes: 'CT', latitude: 41.8833, longitude: -72.1333, designation: 'State Forest' },
+  { id: 'seed_ct_tunxis', source: 'state', fullName: 'Tunxis State Forest', stateCodes: 'CT', latitude: 41.7667, longitude: -72.9667, designation: 'State Forest' },
+  { id: 'seed_ct_meshomasic', source: 'state', fullName: 'Meshomasic State Forest', stateCodes: 'CT', latitude: 41.6167, longitude: -72.4500, designation: 'State Forest' },
+  { id: 'seed_ct_gillette_castle', source: 'state', fullName: 'Gillette Castle State Park', stateCodes: 'CT', latitude: 41.4333, longitude: -72.4333, designation: 'State Historic Park' },
+  { id: 'seed_ct_fort_trumbull', source: 'state', fullName: 'Fort Trumbull State Park', stateCodes: 'CT', latitude: 41.3500, longitude: -72.1000, designation: 'State Historic Park' },
 ];
 
 export function toFullPark(s: SeedPark): Park {
