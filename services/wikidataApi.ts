@@ -1,8 +1,11 @@
 import { type SQLiteDatabase } from 'expo-sqlite';
+import { SEEDS, toFullPark } from '../constants/StateParksSeed';
 
 const SPARQL_ENDPOINT = 'https://query.wikidata.org/sparql';
-const CACHE_KEY = 'wikidata_planner_sync_v1';
+const CACHE_KEY = 'wikidata_planner_sync_v2';
+const SEED_KEY = 'wikidata_seed_loaded_v1';
 const CACHE_DURATION_MS = 30 * 24 * 60 * 60 * 1000;
+const FETCH_TIMEOUT_MS = 25_000;
 
 const QID_TYPES = [
   { qid: 'Q179049', designation: 'State Park' },
@@ -37,10 +40,43 @@ async function setCache(db: SQLiteDatabase, key: string, data: CacheEntry): Prom
   );
 }
 
+async function loadSeedParks(db: SQLiteDatabase): Promise<void> {
+  const already = await getCache(db, SEED_KEY);
+  if (already) return;
+
+  const now = Date.now();
+  for (const seed of SEEDS) {
+    const park = toFullPark(seed);
+    await db.runAsync(
+      `INSERT OR IGNORE INTO parks
+        (id, source, full_name, description, state_codes, latitude, longitude,
+         designation, image_url, activities, entrance_fee_cents, raw_json, last_synced)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+      [
+        park.id,
+        park.source,
+        park.fullName,
+        park.description,
+        park.stateCodes,
+        park.latitude,
+        park.longitude,
+        park.designation,
+        park.imageUrl,
+        JSON.stringify(park.activities),
+        park.entranceFeeCents,
+        park.rawJson,
+        now,
+      ],
+    );
+  }
+
+  await setCache(db, SEED_KEY, { value: String(SEEDS.length), timestamp: now });
+}
+
 function buildQuery(qid: string): string {
   return `
 SELECT DISTINCT ?park ?parkLabel ?coord ?stateAbbr ?image WHERE {
-  ?park wdt:P31/wdt:P279* wd:${qid} .
+  ?park wdt:P31 wd:${qid} .
   ?park wdt:P17 wd:Q30 .
   OPTIONAL { ?park wdt:P625 ?coord . }
   OPTIONAL { ?park wdt:P18 ?image . }
@@ -50,7 +86,7 @@ SELECT DISTINCT ?park ?parkLabel ?coord ?stateAbbr ?image WHERE {
     FILTER(STRSTARTS(?stateAbbr, "US-"))
   }
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
-} LIMIT 5000
+} LIMIT 3000
 `.trim();
 }
 
@@ -77,16 +113,29 @@ interface ParsedWdPark {
   imageUrl: string | null;
 }
 
+function delay(ms: number): Promise<void> {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 async function fetchQidParks(qid: string): Promise<Map<string, ParsedWdPark>> {
   const query = buildQuery(qid);
   const url = `${SPARQL_ENDPOINT}?query=${encodeURIComponent(query)}&format=json`;
 
-  const response = await fetch(url, {
-    headers: {
-      Accept: 'application/sparql-results+json',
-      'User-Agent': 'ParkPlannerApp/1.0 (educational project)',
-    },
-  });
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
+
+  let response: Response;
+  try {
+    response = await fetch(url, {
+      signal: controller.signal,
+      headers: {
+        Accept: 'application/sparql-results+json',
+        'User-Agent': 'ParkPlannerApp/1.0 (educational project)',
+      },
+    });
+  } finally {
+    clearTimeout(timer);
+  }
 
   if (!response.ok) {
     throw new Error(`Wikidata SPARQL error: ${response.status}`);
@@ -110,11 +159,9 @@ async function fetchQidParks(qid: string): Promise<Map<string, ParsedWdPark>> {
     const stateAbbr = binding.stateAbbr?.value?.replace('US-', '') ?? null;
     const rawImageUrl = binding.image?.value ?? null;
 
-    // Prefer rows with state codes
     const existing = parkMap.get(qidVal);
     if (existing?.stateAbbr && !stateAbbr) continue;
 
-    // Convert Wikimedia Commons filename to thumbnail URL
     let imageUrl: string | null = null;
     if (rawImageUrl) {
       const filename = rawImageUrl.split('/').pop();
@@ -133,6 +180,9 @@ export async function syncStateParksFromWikidata(
   db: SQLiteDatabase,
   progressCallback?: (msg: string | null) => void,
 ): Promise<void> {
+  // Always load bundled seeds first so state parks appear immediately
+  await loadSeedParks(db);
+
   const cache = await getCache(db, CACHE_KEY);
   if (cache && Date.now() - cache.timestamp < CACHE_DURATION_MS) {
     return;
@@ -141,7 +191,10 @@ export async function syncStateParksFromWikidata(
   const now = Date.now();
   let totalInserted = 0;
 
-  for (const { qid, designation } of QID_TYPES) {
+  for (let i = 0; i < QID_TYPES.length; i++) {
+    const { qid, designation } = QID_TYPES[i];
+    if (i > 0) await delay(1000);
+
     progressCallback?.(`Loading ${designation}s…`);
 
     try {
