@@ -311,6 +311,31 @@ const SEEDS: SeedPark[] = [
   { id: 'seed_ga_fort_king_george', source: 'state', fullName: 'Fort King George Historic Site', stateCodes: 'GA', latitude: 31.3667, longitude: -81.4167, designation: 'State Historic Park' },
   { id: 'seed_ga_new_echota', source: 'state', fullName: 'New Echota Historic Site', stateCodes: 'GA', latitude: 34.5667, longitude: -84.9333, designation: 'State Historic Park' },
   { id: 'seed_ga_etowah_mounds', source: 'state', fullName: 'Etowah Indian Mounds Historic Site', stateCodes: 'GA', latitude: 34.1333, longitude: -84.7500, designation: 'State Historic Park' },
+
+  // ── Hawaii ───────────────────────────────────────────────────────────────
+  { id: 'seed_hi_napali_coast', source: 'state', fullName: 'Nāpali Coast State Wilderness Park', stateCodes: 'HI', latitude: 22.1987, longitude: -159.6488, designation: 'State Park' },
+  { id: 'seed_hi_waimea_canyon', source: 'state', fullName: 'Waimea Canyon State Park', stateCodes: 'HI', latitude: 22.0549, longitude: -159.6688, designation: 'State Park' },
+  { id: 'seed_hi_kokee', source: 'state', fullName: 'Kōkeʻe State Park', stateCodes: 'HI', latitude: 22.1333, longitude: -159.6333, designation: 'State Park' },
+  { id: 'seed_hi_polihale', source: 'state', fullName: 'Polihale State Park', stateCodes: 'HI', latitude: 22.0833, longitude: -159.7500, designation: 'State Park' },
+  { id: 'seed_hi_haena', source: 'state', fullName: "Haʻena State Park", stateCodes: 'HI', latitude: 22.2167, longitude: -159.5833, designation: 'State Park' },
+  { id: 'seed_hi_diamond_head', source: 'state', fullName: 'Diamond Head State Monument', stateCodes: 'HI', latitude: 21.2625, longitude: -157.8047, designation: 'State Park' },
+  { id: 'seed_hi_nuuanu_pali', source: 'state', fullName: "Nuʻuanu Pali State Wayside", stateCodes: 'HI', latitude: 21.3654, longitude: -157.7979, designation: 'State Park' },
+  { id: 'seed_hi_kaena_point', source: 'state', fullName: 'Kaena Point State Park', stateCodes: 'HI', latitude: 21.5742, longitude: -158.2806, designation: 'State Park' },
+  { id: 'seed_hi_makapuu_point', source: 'state', fullName: "Makapuʻu Point State Wayside", stateCodes: 'HI', latitude: 21.3097, longitude: -157.6528, designation: 'State Park' },
+  { id: 'seed_hi_iao_valley', source: 'state', fullName: 'Iao Valley State Monument', stateCodes: 'HI', latitude: 20.8833, longitude: -156.5500, designation: 'State Park' },
+  { id: 'seed_hi_waianapanapa', source: 'state', fullName: "Waiʻanapanapa State Park", stateCodes: 'HI', latitude: 20.8000, longitude: -156.0167, designation: 'State Park' },
+  { id: 'seed_hi_akaka_falls', source: 'state', fullName: 'Akaka Falls State Park', stateCodes: 'HI', latitude: 19.8500, longitude: -155.1500, designation: 'State Park' },
+  { id: 'seed_hi_lava_tree', source: 'state', fullName: 'Lava Tree State Monument', stateCodes: 'HI', latitude: 19.4833, longitude: -154.9333, designation: 'State Park' },
+  { id: 'seed_hi_sand_island', source: 'state', fullName: 'Sand Island State Recreation Area', stateCodes: 'HI', latitude: 21.3000, longitude: -157.8833, designation: 'State Recreation Area' },
+  { id: 'seed_hi_polipoli_spring', source: 'state', fullName: 'Polipoli Spring State Recreation Area', stateCodes: 'HI', latitude: 20.6667, longitude: -156.3500, designation: 'State Recreation Area' },
+  { id: 'seed_hi_hapuna_beach', source: 'state', fullName: 'Hapuna Beach State Recreation Area', stateCodes: 'HI', latitude: 20.0000, longitude: -155.8167, designation: 'State Recreation Area' },
+  { id: 'seed_hi_mauna_kea', source: 'state', fullName: 'Mauna Kea State Recreation Area', stateCodes: 'HI', latitude: 19.8167, longitude: -155.4833, designation: 'State Recreation Area' },
+  { id: 'seed_hi_kalopa', source: 'state', fullName: 'Kalopa State Recreation Area', stateCodes: 'HI', latitude: 20.0667, longitude: -155.2833, designation: 'State Recreation Area' },
+  { id: 'seed_hi_mackenzie', source: 'state', fullName: 'MacKenzie State Recreation Area', stateCodes: 'HI', latitude: 19.5167, longitude: -154.9000, designation: 'State Recreation Area' },
+  { id: 'seed_hi_wailoa_river', source: 'state', fullName: 'Wailoa River State Recreation Area', stateCodes: 'HI', latitude: 19.7167, longitude: -155.0833, designation: 'State Recreation Area' },
+  { id: 'seed_hi_iolani_palace', source: 'state', fullName: 'Iolani Palace State Monument', stateCodes: 'HI', latitude: 21.3063, longitude: -157.8594, designation: 'State Historic Park' },
+  { id: 'seed_hi_kealakekua_bay', source: 'state', fullName: 'Kealakekua Bay State Historical Park', stateCodes: 'HI', latitude: 19.4767, longitude: -155.9220, designation: 'State Historic Park' },
+  { id: 'seed_hi_lapakahi', source: 'state', fullName: 'Lapakahi State Historical Park', stateCodes: 'HI', latitude: 20.1667, longitude: -155.9000, designation: 'State Historic Park' },
 ];
 
 export function toFullPark(s: SeedPark): Park {
