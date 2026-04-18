@@ -52,6 +52,32 @@ const SEEDS: SeedPark[] = [
   { id: 'seed_ak_surprise_cove', source: 'state', fullName: 'Surprise Cove State Marine Park', stateCodes: 'AK', latitude: 60.9167, longitude: -148.1667, designation: 'State Marine Park' },
   { id: 'seed_ak_decision_point', source: 'state', fullName: 'Decision Point State Marine Park', stateCodes: 'AK', latitude: 60.9833, longitude: -148.3000, designation: 'State Marine Park' },
   { id: 'seed_ak_halibut_cove', source: 'state', fullName: 'Halibut Cove State Marine Park', stateCodes: 'AK', latitude: 59.5950, longitude: -151.2167, designation: 'State Marine Park' },
+
+  // ── Arizona ──────────────────────────────────────────────────────────────
+  { id: 'seed_az_alamo_lake', source: 'state', fullName: 'Alamo Lake State Park', stateCodes: 'AZ', latitude: 34.2361, longitude: -113.5694, designation: 'State Park' },
+  { id: 'seed_az_buckskin_mountain', source: 'state', fullName: 'Buckskin Mountain State Park', stateCodes: 'AZ', latitude: 34.1806, longitude: -114.1319, designation: 'State Park' },
+  { id: 'seed_az_catalina', source: 'state', fullName: 'Catalina State Park', stateCodes: 'AZ', latitude: 32.4186, longitude: -110.9230, designation: 'State Park' },
+  { id: 'seed_az_cattail_cove', source: 'state', fullName: 'Cattail Cove State Park', stateCodes: 'AZ', latitude: 34.3972, longitude: -114.1833, designation: 'State Park' },
+  { id: 'seed_az_dead_horse_ranch', source: 'state', fullName: 'Dead Horse Ranch State Park', stateCodes: 'AZ', latitude: 34.7387, longitude: -112.0012, designation: 'State Park' },
+  { id: 'seed_az_fool_hollow', source: 'state', fullName: 'Fool Hollow Lake Recreation Area', stateCodes: 'AZ', latitude: 34.1631, longitude: -110.0156, designation: 'State Recreation Area' },
+  { id: 'seed_az_lake_havasu', source: 'state', fullName: 'Lake Havasu State Park', stateCodes: 'AZ', latitude: 34.5200, longitude: -114.3500, designation: 'State Park' },
+  { id: 'seed_az_lyman_lake', source: 'state', fullName: 'Lyman Lake State Park', stateCodes: 'AZ', latitude: 34.3708, longitude: -109.3722, designation: 'State Park' },
+  { id: 'seed_az_patagonia_lake', source: 'state', fullName: 'Patagonia Lake State Park', stateCodes: 'AZ', latitude: 31.4667, longitude: -110.8500, designation: 'State Park' },
+  { id: 'seed_az_picacho_peak', source: 'state', fullName: 'Picacho Peak State Park', stateCodes: 'AZ', latitude: 32.6431, longitude: -111.4025, designation: 'State Park' },
+  { id: 'seed_az_red_rock', source: 'state', fullName: 'Red Rock State Park', stateCodes: 'AZ', latitude: 34.8667, longitude: -111.8333, designation: 'State Park' },
+  { id: 'seed_az_roper_lake', source: 'state', fullName: 'Roper Lake State Park', stateCodes: 'AZ', latitude: 32.7167, longitude: -109.7500, designation: 'State Park' },
+  { id: 'seed_az_slide_rock', source: 'state', fullName: 'Slide Rock State Park', stateCodes: 'AZ', latitude: 34.9397, longitude: -111.7541, designation: 'State Park' },
+  { id: 'seed_az_tonto_natural_bridge', source: 'state', fullName: 'Tonto Natural Bridge State Park', stateCodes: 'AZ', latitude: 34.3253, longitude: -111.4514, designation: 'State Park' },
+  { id: 'seed_az_burro_creek', source: 'state', fullName: 'Burro Creek State Park', stateCodes: 'AZ', latitude: 34.4667, longitude: -113.6500, designation: 'State Park' },
+  { id: 'seed_az_fort_verde', source: 'state', fullName: 'Fort Verde State Historic Park', stateCodes: 'AZ', latitude: 34.5597, longitude: -111.8603, designation: 'State Historic Park' },
+  { id: 'seed_az_jerome', source: 'state', fullName: 'Jerome State Historic Park', stateCodes: 'AZ', latitude: 34.7481, longitude: -112.1144, designation: 'State Historic Park' },
+  { id: 'seed_az_mcfarland', source: 'state', fullName: 'McFarland State Historic Park', stateCodes: 'AZ', latitude: 33.0314, longitude: -111.3875, designation: 'State Historic Park' },
+  { id: 'seed_az_tubac_presidio', source: 'state', fullName: 'Tubac Presidio State Historic Park', stateCodes: 'AZ', latitude: 31.5667, longitude: -111.0500, designation: 'State Historic Park' },
+  { id: 'seed_az_tombstone_courthouse', source: 'state', fullName: 'Tombstone Courthouse State Historic Park', stateCodes: 'AZ', latitude: 31.7128, longitude: -110.0669, designation: 'State Historic Park' },
+  { id: 'seed_az_yuma_prison', source: 'state', fullName: 'Yuma Territorial Prison State Historic Park', stateCodes: 'AZ', latitude: 32.7236, longitude: -114.6222, designation: 'State Historic Park' },
+  { id: 'seed_az_riordan_mansion', source: 'state', fullName: 'Riordan Mansion State Historic Park', stateCodes: 'AZ', latitude: 35.1939, longitude: -111.6481, designation: 'State Historic Park' },
+  { id: 'seed_az_homolovi', source: 'state', fullName: 'Homolovi State Park', stateCodes: 'AZ', latitude: 35.0378, longitude: -110.6469, designation: 'State Historic Park' },
+  { id: 'seed_az_colorado_river', source: 'state', fullName: 'Colorado River State Historic Park', stateCodes: 'AZ', latitude: 32.7167, longitude: -114.6333, designation: 'State Historic Park' },
 ];
 
 export function toFullPark(s: SeedPark): Park {
