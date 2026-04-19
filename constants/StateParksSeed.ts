@@ -978,6 +978,29 @@ const SEEDS: SeedPark[] = [
   { id: 'seed_nd_pembina_gorge', source: 'state', fullName: 'Pembina Gorge State Recreation Area', stateCodes: 'ND', latitude: 48.9333, longitude: -97.8833, designation: 'State Recreation Area' },
   { id: 'seed_nd_red_river', source: 'state', fullName: 'Red River State Recreation Area', stateCodes: 'ND', latitude: 46.8833, longitude: -96.7833, designation: 'State Recreation Area' },
   { id: 'seed_nd_crow_flies_high', source: 'state', fullName: 'Crow Flies High State Recreation Area', stateCodes: 'ND', latitude: 47.7000, longitude: -102.5000, designation: 'State Recreation Area' },
+
+  // ── Ohio ──
+  { id: 'seed_oh_hocking_hills', source: 'state', fullName: 'Hocking Hills State Park', stateCodes: 'OH', latitude: 39.4333, longitude: -82.5333, designation: 'State Park' },
+  { id: 'seed_oh_mohican', source: 'state', fullName: 'Mohican State Park', stateCodes: 'OH', latitude: 40.6083, longitude: -82.3000, designation: 'State Park' },
+  { id: 'seed_oh_john_bryan', source: 'state', fullName: 'John Bryan State Park', stateCodes: 'OH', latitude: 39.7833, longitude: -83.8667, designation: 'State Park' },
+  { id: 'seed_oh_hueston_woods', source: 'state', fullName: 'Hueston Woods State Park', stateCodes: 'OH', latitude: 39.5833, longitude: -84.7333, designation: 'State Park' },
+  { id: 'seed_oh_lake_hope', source: 'state', fullName: 'Lake Hope State Park', stateCodes: 'OH', latitude: 39.3333, longitude: -82.3333, designation: 'State Park' },
+  { id: 'seed_oh_salt_fork', source: 'state', fullName: 'Salt Fork State Park', stateCodes: 'OH', latitude: 40.1333, longitude: -81.5500, designation: 'State Park' },
+  { id: 'seed_oh_punderson', source: 'state', fullName: 'Punderson State Park', stateCodes: 'OH', latitude: 41.4667, longitude: -81.2000, designation: 'State Park' },
+  { id: 'seed_oh_east_harbor', source: 'state', fullName: 'East Harbor State Park', stateCodes: 'OH', latitude: 41.5522, longitude: -82.8167, designation: 'State Park' },
+  { id: 'seed_oh_maumee_bay', source: 'state', fullName: 'Maumee Bay State Park', stateCodes: 'OH', latitude: 41.6833, longitude: -83.4167, designation: 'State Park' },
+  { id: 'seed_oh_headlands_beach', source: 'state', fullName: 'Headlands Beach State Park', stateCodes: 'OH', latitude: 41.7500, longitude: -81.3000, designation: 'State Park' },
+  { id: 'seed_oh_kelleys_island', source: 'state', fullName: 'Kelleys Island State Park', stateCodes: 'OH', latitude: 41.5833, longitude: -82.7000, designation: 'State Park' },
+  { id: 'seed_oh_south_bass_island', source: 'state', fullName: 'South Bass Island State Park', stateCodes: 'OH', latitude: 41.6500, longitude: -82.8167, designation: 'State Park' },
+  { id: 'seed_oh_shawnee', source: 'state', fullName: 'Shawnee State Park', stateCodes: 'OH', latitude: 38.6833, longitude: -83.2167, designation: 'State Park' },
+  { id: 'seed_oh_lake_alma', source: 'state', fullName: 'Lake Alma State Park', stateCodes: 'OH', latitude: 39.1333, longitude: -82.3833, designation: 'State Park' },
+  { id: 'seed_oh_paint_creek', source: 'state', fullName: 'Paint Creek State Park', stateCodes: 'OH', latitude: 39.2333, longitude: -83.3500, designation: 'State Park' },
+  { id: 'seed_oh_deer_creek', source: 'state', fullName: 'Deer Creek State Park', stateCodes: 'OH', latitude: 39.6500, longitude: -83.2333, designation: 'State Park' },
+  { id: 'seed_oh_indian_lake', source: 'state', fullName: 'Indian Lake State Park', stateCodes: 'OH', latitude: 40.4500, longitude: -83.7333, designation: 'State Park' },
+  { id: 'seed_oh_scioto_trail', source: 'state', fullName: 'Scioto Trail State Park', stateCodes: 'OH', latitude: 38.9833, longitude: -83.0167, designation: 'State Park' },
+  { id: 'seed_oh_lake_loramie', source: 'state', fullName: 'Lake Loramie State Park', stateCodes: 'OH', latitude: 40.3500, longitude: -84.3667, designation: 'State Park' },
+  { id: 'seed_oh_serpent_mound', source: 'state', fullName: 'Serpent Mound State Memorial', stateCodes: 'OH', latitude: 39.0236, longitude: -83.4306, designation: 'State Historic Park' },
+  { id: 'seed_oh_fort_ancient', source: 'state', fullName: 'Fort Ancient State Memorial', stateCodes: 'OH', latitude: 39.4167, longitude: -84.0833, designation: 'State Historic Park' },
 ];
 
 export function toFullPark(s: SeedPark): Park {
