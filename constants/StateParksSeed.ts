@@ -526,6 +526,30 @@ const SEEDS: SeedPark[] = [
   { id: 'seed_ky_dr_thomas_walker', source: 'state', fullName: 'Dr. Thomas Walker State Historic Site', stateCodes: 'KY', latitude: 36.8667, longitude: -83.8833, designation: 'State Historic Park' },
   { id: 'seed_ky_jefferson_davis', source: 'state', fullName: 'Jefferson Davis State Historic Site', stateCodes: 'KY', latitude: 36.8500, longitude: -87.2833, designation: 'State Historic Park' },
   { id: 'seed_ky_lincoln_homestead', source: 'state', fullName: 'Lincoln Homestead State Historic Site', stateCodes: 'KY', latitude: 37.7000, longitude: -85.2333, designation: 'State Historic Park' },
+
+  // ── Louisiana ────────────────────────────────────────────────────────────
+  { id: 'seed_la_bogue_chitto', source: 'state', fullName: 'Bogue Chitto State Park', stateCodes: 'LA', latitude: 30.8333, longitude: -90.1500, designation: 'State Park' },
+  { id: 'seed_la_chicot', source: 'state', fullName: 'Chicot State Park', stateCodes: 'LA', latitude: 30.7833, longitude: -92.2833, designation: 'State Park' },
+  { id: 'seed_la_cypremort_point', source: 'state', fullName: 'Cypremort Point State Park', stateCodes: 'LA', latitude: 29.7167, longitude: -91.8833, designation: 'State Park' },
+  { id: 'seed_la_fairview_riverside', source: 'state', fullName: 'Fairview-Riverside State Park', stateCodes: 'LA', latitude: 30.4000, longitude: -90.1500, designation: 'State Park' },
+  { id: 'seed_la_fontainebleau', source: 'state', fullName: 'Fontainebleau State Park', stateCodes: 'LA', latitude: 30.3667, longitude: -90.0500, designation: 'State Park' },
+  { id: 'seed_la_jimmie_davis', source: 'state', fullName: 'Jimmie Davis State Park', stateCodes: 'LA', latitude: 32.0000, longitude: -92.4667, designation: 'State Park' },
+  { id: 'seed_la_lake_bistineau', source: 'state', fullName: 'Lake Bistineau State Park', stateCodes: 'LA', latitude: 32.5167, longitude: -93.4167, designation: 'State Park' },
+  { id: 'seed_la_lake_claiborne', source: 'state', fullName: 'Lake Claiborne State Park', stateCodes: 'LA', latitude: 32.8500, longitude: -92.9833, designation: 'State Park' },
+  { id: 'seed_la_north_toledo_bend', source: 'state', fullName: 'North Toledo Bend State Park', stateCodes: 'LA', latitude: 31.6500, longitude: -93.7833, designation: 'State Park' },
+  { id: 'seed_la_palmetto_island', source: 'state', fullName: 'Palmetto Island State Park', stateCodes: 'LA', latitude: 29.8333, longitude: -92.1167, designation: 'State Park' },
+  { id: 'seed_la_poverty_point_reservoir', source: 'state', fullName: 'Poverty Point Reservoir State Park', stateCodes: 'LA', latitude: 32.4167, longitude: -91.5333, designation: 'State Park' },
+  { id: 'seed_la_sam_houston_jones', source: 'state', fullName: 'Sam Houston Jones State Park', stateCodes: 'LA', latitude: 30.3167, longitude: -93.2333, designation: 'State Park' },
+  { id: 'seed_la_south_toledo_bend', source: 'state', fullName: 'South Toledo Bend State Park', stateCodes: 'LA', latitude: 31.2333, longitude: -93.6833, designation: 'State Park' },
+  { id: 'seed_la_tickfaw', source: 'state', fullName: 'Tickfaw State Park', stateCodes: 'LA', latitude: 30.4167, longitude: -90.5167, designation: 'State Park' },
+  { id: 'seed_la_centenary', source: 'state', fullName: 'Centenary State Historic Site', stateCodes: 'LA', latitude: 30.8333, longitude: -91.2167, designation: 'State Historic Park' },
+  { id: 'seed_la_fort_pike', source: 'state', fullName: 'Fort Pike State Historic Site', stateCodes: 'LA', latitude: 30.1833, longitude: -89.8167, designation: 'State Historic Park' },
+  { id: 'seed_la_fort_randolph', source: 'state', fullName: 'Fort Randolph State Historic Site', stateCodes: 'LA', latitude: 30.7000, longitude: -91.7000, designation: 'State Historic Park' },
+  { id: 'seed_la_longfellow_evangeline', source: 'state', fullName: 'Longfellow-Evangeline State Historic Site', stateCodes: 'LA', latitude: 30.1167, longitude: -91.8333, designation: 'State Historic Park' },
+  { id: 'seed_la_los_adaes', source: 'state', fullName: 'Los Adaes State Historic Site', stateCodes: 'LA', latitude: 31.6833, longitude: -93.7500, designation: 'State Historic Park' },
+  { id: 'seed_la_marksville', source: 'state', fullName: 'Marksville State Historic Site', stateCodes: 'LA', latitude: 31.1333, longitude: -92.0667, designation: 'State Historic Park' },
+  { id: 'seed_la_poverty_point', source: 'state', fullName: 'Poverty Point World Heritage Site', stateCodes: 'LA', latitude: 32.6333, longitude: -91.4000, designation: 'State Historic Park' },
+  { id: 'seed_la_tunica_hills', source: 'state', fullName: 'Tunica Hills Wildlife Management Area', stateCodes: 'LA', latitude: 30.8667, longitude: -91.3833, designation: 'State Natural Area' },
 ];
 
 export function toFullPark(s: SeedPark): Park {
