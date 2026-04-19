@@ -848,6 +848,33 @@ const SEEDS: SeedPark[] = [
   { id: 'seed_nh_fort_stark', source: 'state', fullName: 'Fort Stark Historic Site', stateCodes: 'NH', latitude: 43.0667, longitude: -70.7000, designation: 'State Historic Park' },
   { id: 'seed_nh_wentworth_coolidge', source: 'state', fullName: 'Wentworth-Coolidge Mansion State Historic Site', stateCodes: 'NH', latitude: 43.0833, longitude: -70.7667, designation: 'State Historic Park' },
   { id: 'seed_nh_chesterfield_gorge', source: 'state', fullName: 'Chesterfield Gorge Natural Area', stateCodes: 'NH', latitude: 42.9167, longitude: -72.4667, designation: 'State Natural Area' },
+
+  // ── New Jersey ──
+  { id: 'seed_nj_liberty', source: 'state', fullName: 'Liberty State Park', stateCodes: 'NJ', latitude: 40.7017, longitude: -74.0517, designation: 'State Park' },
+  { id: 'seed_nj_high_point', source: 'state', fullName: 'High Point State Park', stateCodes: 'NJ', latitude: 41.3211, longitude: -74.6647, designation: 'State Park' },
+  { id: 'seed_nj_wawayanda', source: 'state', fullName: 'Wawayanda State Park', stateCodes: 'NJ', latitude: 41.1500, longitude: -74.4333, designation: 'State Park' },
+  { id: 'seed_nj_ringwood', source: 'state', fullName: 'Ringwood State Park', stateCodes: 'NJ', latitude: 41.1167, longitude: -74.2833, designation: 'State Park' },
+  { id: 'seed_nj_allaire', source: 'state', fullName: 'Allaire State Park', stateCodes: 'NJ', latitude: 40.1583, longitude: -74.1333, designation: 'State Park' },
+  { id: 'seed_nj_washington_crossing', source: 'state', fullName: 'Washington Crossing State Park', stateCodes: 'NJ', latitude: 40.2878, longitude: -74.8678, designation: 'State Park' },
+  { id: 'seed_nj_cheesequake', source: 'state', fullName: 'Cheesequake State Park', stateCodes: 'NJ', latitude: 40.4408, longitude: -74.2869, designation: 'State Park' },
+  { id: 'seed_nj_island_beach', source: 'state', fullName: 'Island Beach State Park', stateCodes: 'NJ', latitude: 39.8500, longitude: -74.0833, designation: 'State Park' },
+  { id: 'seed_nj_cape_may_point', source: 'state', fullName: 'Cape May Point State Park', stateCodes: 'NJ', latitude: 38.9333, longitude: -74.9667, designation: 'State Park' },
+  { id: 'seed_nj_barnegat_lighthouse', source: 'state', fullName: 'Barnegat Lighthouse State Park', stateCodes: 'NJ', latitude: 39.7583, longitude: -74.1056, designation: 'State Park' },
+  { id: 'seed_nj_hacklebarney', source: 'state', fullName: 'Hacklebarney State Park', stateCodes: 'NJ', latitude: 40.7014, longitude: -74.6556, designation: 'State Park' },
+  { id: 'seed_nj_stephens', source: 'state', fullName: 'Stephens State Park', stateCodes: 'NJ', latitude: 40.8500, longitude: -74.8333, designation: 'State Park' },
+  { id: 'seed_nj_dr_canal', source: 'state', fullName: 'Delaware and Raritan Canal State Park', stateCodes: 'NJ', latitude: 40.3500, longitude: -74.6500, designation: 'State Park' },
+  { id: 'seed_nj_double_trouble', source: 'state', fullName: 'Double Trouble State Park', stateCodes: 'NJ', latitude: 39.9333, longitude: -74.1833, designation: 'State Park' },
+  { id: 'seed_nj_swartswood', source: 'state', fullName: 'Swartswood State Park', stateCodes: 'NJ', latitude: 41.0917, longitude: -74.8250, designation: 'State Park' },
+  { id: 'seed_nj_voorhees', source: 'state', fullName: 'Voorhees State Park', stateCodes: 'NJ', latitude: 40.6617, longitude: -74.8322, designation: 'State Park' },
+  { id: 'seed_nj_bass_river_forest', source: 'state', fullName: 'Bass River State Forest', stateCodes: 'NJ', latitude: 39.6500, longitude: -74.4167, designation: 'State Forest' },
+  { id: 'seed_nj_wharton_forest', source: 'state', fullName: 'Wharton State Forest', stateCodes: 'NJ', latitude: 39.7167, longitude: -74.6667, designation: 'State Forest' },
+  { id: 'seed_nj_brendan_byrne_forest', source: 'state', fullName: 'Brendan T. Byrne State Forest', stateCodes: 'NJ', latitude: 39.9000, longitude: -74.5333, designation: 'State Forest' },
+  { id: 'seed_nj_belleplain_forest', source: 'state', fullName: 'Belleplain State Forest', stateCodes: 'NJ', latitude: 39.2833, longitude: -74.8667, designation: 'State Forest' },
+  { id: 'seed_nj_jenny_jump_forest', source: 'state', fullName: 'Jenny Jump State Forest', stateCodes: 'NJ', latitude: 40.9167, longitude: -74.8833, designation: 'State Forest' },
+  { id: 'seed_nj_spruce_run', source: 'state', fullName: 'Spruce Run Recreation Area', stateCodes: 'NJ', latitude: 40.6667, longitude: -74.9167, designation: 'State Recreation Area' },
+  { id: 'seed_nj_round_valley', source: 'state', fullName: 'Round Valley Recreation Area', stateCodes: 'NJ', latitude: 40.6167, longitude: -74.8333, designation: 'State Recreation Area' },
+  { id: 'seed_nj_monmouth_battlefield', source: 'state', fullName: 'Monmouth Battlefield State Park', stateCodes: 'NJ', latitude: 40.2392, longitude: -74.2828, designation: 'State Historic Park' },
+  { id: 'seed_nj_princeton_battlefield', source: 'state', fullName: 'Princeton Battlefield State Park', stateCodes: 'NJ', latitude: 40.3064, longitude: -74.6497, designation: 'State Historic Park' },
 ];
 
 export function toFullPark(s: SeedPark): Park {
