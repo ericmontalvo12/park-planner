@@ -961,6 +961,23 @@ const SEEDS: SeedPark[] = [
   { id: 'seed_nc_historic_bath', source: 'state', fullName: 'Historic Bath State Historic Site', stateCodes: 'NC', latitude: 35.4667, longitude: -76.8333, designation: 'State Historic Park' },
   { id: 'seed_nc_reed_gold_mine', source: 'state', fullName: 'Reed Gold Mine State Historic Site', stateCodes: 'NC', latitude: 35.3667, longitude: -80.4333, designation: 'State Historic Park' },
   { id: 'seed_nc_town_creek_mound', source: 'state', fullName: 'Town Creek Indian Mound State Historic Site', stateCodes: 'NC', latitude: 35.3167, longitude: -79.9833, designation: 'State Historic Park' },
+
+  // ── North Dakota ──
+  { id: 'seed_nd_lake_metigoshe', source: 'state', fullName: 'Lake Metigoshe State Park', stateCodes: 'ND', latitude: 48.9833, longitude: -100.1167, designation: 'State Park' },
+  { id: 'seed_nd_icelandic', source: 'state', fullName: 'Icelandic State Park', stateCodes: 'ND', latitude: 48.8833, longitude: -97.6500, designation: 'State Park' },
+  { id: 'seed_nd_fort_stevenson', source: 'state', fullName: 'Fort Stevenson State Park', stateCodes: 'ND', latitude: 47.5833, longitude: -101.4167, designation: 'State Park' },
+  { id: 'seed_nd_beaver_lake', source: 'state', fullName: 'Beaver Lake State Park', stateCodes: 'ND', latitude: 46.5167, longitude: -99.7500, designation: 'State Park' },
+  { id: 'seed_nd_lewis_and_clark', source: 'state', fullName: 'Lewis and Clark State Park', stateCodes: 'ND', latitude: 48.0167, longitude: -102.8833, designation: 'State Park' },
+  { id: 'seed_nd_cross_ranch', source: 'state', fullName: 'Cross Ranch State Park', stateCodes: 'ND', latitude: 46.9167, longitude: -100.9167, designation: 'State Park' },
+  { id: 'seed_nd_fort_ransom', source: 'state', fullName: 'Fort Ransom State Park', stateCodes: 'ND', latitude: 46.5333, longitude: -97.9333, designation: 'State Park' },
+  { id: 'seed_nd_lake_sakakawea', source: 'state', fullName: 'Lake Sakakawea State Park', stateCodes: 'ND', latitude: 47.5500, longitude: -101.3833, designation: 'State Park' },
+  { id: 'seed_nd_little_missouri', source: 'state', fullName: 'Little Missouri State Park', stateCodes: 'ND', latitude: 47.4333, longitude: -102.6500, designation: 'State Park' },
+  { id: 'seed_nd_grahams_island', source: 'state', fullName: 'Grahams Island State Park', stateCodes: 'ND', latitude: 47.9167, longitude: -98.7833, designation: 'State Park' },
+  { id: 'seed_nd_fort_abraham_lincoln', source: 'state', fullName: 'Fort Abraham Lincoln State Park', stateCodes: 'ND', latitude: 46.7667, longitude: -100.8333, designation: 'State Historic Park' },
+  { id: 'seed_nd_double_ditch', source: 'state', fullName: 'Double Ditch Indian Village State Historic Site', stateCodes: 'ND', latitude: 46.9500, longitude: -100.8667, designation: 'State Historic Park' },
+  { id: 'seed_nd_pembina_gorge', source: 'state', fullName: 'Pembina Gorge State Recreation Area', stateCodes: 'ND', latitude: 48.9333, longitude: -97.8833, designation: 'State Recreation Area' },
+  { id: 'seed_nd_red_river', source: 'state', fullName: 'Red River State Recreation Area', stateCodes: 'ND', latitude: 46.8833, longitude: -96.7833, designation: 'State Recreation Area' },
+  { id: 'seed_nd_crow_flies_high', source: 'state', fullName: 'Crow Flies High State Recreation Area', stateCodes: 'ND', latitude: 47.7000, longitude: -102.5000, designation: 'State Recreation Area' },
 ];
 
 export function toFullPark(s: SeedPark): Park {
