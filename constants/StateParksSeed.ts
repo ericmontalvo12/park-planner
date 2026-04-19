@@ -747,6 +747,33 @@ const SEEDS: SeedPark[] = [
   { id: 'seed_mo_truman_birthplace', source: 'state', fullName: 'Harry S. Truman Birthplace State Historic Site', stateCodes: 'MO', latitude: 37.4958, longitude: -94.2778, designation: 'State Historic Park' },
   { id: 'seed_mo_mark_twain_boyhood', source: 'state', fullName: 'Mark Twain Boyhood Home State Historic Site', stateCodes: 'MO', latitude: 39.7083, longitude: -91.3583, designation: 'State Historic Park' },
   { id: 'seed_mo_mastodon', source: 'state', fullName: 'Mastodon State Historic Site', stateCodes: 'MO', latitude: 38.4167, longitude: -90.3833, designation: 'State Historic Park' },
+
+  // ── Montana ──
+  { id: 'seed_mt_lewis_clark_caverns', source: 'state', fullName: 'Lewis & Clark Caverns State Park', stateCodes: 'MT', latitude: 45.8472, longitude: -111.8917, designation: 'State Park' },
+  { id: 'seed_mt_flathead_lake', source: 'state', fullName: 'Flathead Lake State Park', stateCodes: 'MT', latitude: 47.6800, longitude: -114.0000, designation: 'State Park' },
+  { id: 'seed_mt_makoshika', source: 'state', fullName: 'Makoshika State Park', stateCodes: 'MT', latitude: 47.1167, longitude: -104.7000, designation: 'State Park' },
+  { id: 'seed_mt_missouri_headwaters', source: 'state', fullName: 'Missouri Headwaters State Park', stateCodes: 'MT', latitude: 45.9319, longitude: -111.5028, designation: 'State Park' },
+  { id: 'seed_mt_beaverhead_rock', source: 'state', fullName: 'Beaverhead Rock State Park', stateCodes: 'MT', latitude: 45.4167, longitude: -112.6000, designation: 'State Park' },
+  { id: 'seed_mt_giant_springs', source: 'state', fullName: 'Giant Springs State Park', stateCodes: 'MT', latitude: 47.5333, longitude: -111.2333, designation: 'State Park' },
+  { id: 'seed_mt_tower_rock', source: 'state', fullName: 'Tower Rock State Park', stateCodes: 'MT', latitude: 47.0333, longitude: -111.6833, designation: 'State Park' },
+  { id: 'seed_mt_black_sandy', source: 'state', fullName: 'Black Sandy State Park', stateCodes: 'MT', latitude: 46.7333, longitude: -111.9833, designation: 'State Park' },
+  { id: 'seed_mt_spring_meadow_lake', source: 'state', fullName: 'Spring Meadow Lake State Park', stateCodes: 'MT', latitude: 46.6000, longitude: -112.0667, designation: 'State Park' },
+  { id: 'seed_mt_lake_elmo', source: 'state', fullName: 'Lake Elmo State Park', stateCodes: 'MT', latitude: 45.8167, longitude: -108.5167, designation: 'State Park' },
+  { id: 'seed_mt_brush_lake', source: 'state', fullName: 'Brush Lake State Park', stateCodes: 'MT', latitude: 48.6000, longitude: -104.5667, designation: 'State Park' },
+  { id: 'seed_mt_cooney', source: 'state', fullName: 'Cooney State Park', stateCodes: 'MT', latitude: 45.4333, longitude: -108.8667, designation: 'State Park' },
+  { id: 'seed_mt_wayfarers', source: 'state', fullName: 'Wayfarers State Park', stateCodes: 'MT', latitude: 48.0833, longitude: -114.0500, designation: 'State Park' },
+  { id: 'seed_mt_salmon_lake', source: 'state', fullName: 'Salmon Lake State Park', stateCodes: 'MT', latitude: 47.1667, longitude: -113.5833, designation: 'State Park' },
+  { id: 'seed_mt_placid_lake', source: 'state', fullName: 'Placid Lake State Park', stateCodes: 'MT', latitude: 47.2833, longitude: -113.5167, designation: 'State Park' },
+  { id: 'seed_mt_ackley_lake', source: 'state', fullName: 'Ackley Lake State Park', stateCodes: 'MT', latitude: 47.0000, longitude: -110.1667, designation: 'State Park' },
+  { id: 'seed_mt_lake_mary_ronan', source: 'state', fullName: 'Lake Mary Ronan State Park', stateCodes: 'MT', latitude: 47.8833, longitude: -114.2167, designation: 'State Park' },
+  { id: 'seed_mt_hell_creek', source: 'state', fullName: 'Hell Creek State Park', stateCodes: 'MT', latitude: 47.4500, longitude: -106.9833, designation: 'State Park' },
+  { id: 'seed_mt_holter_lake', source: 'state', fullName: 'Holter Lake State Park', stateCodes: 'MT', latitude: 47.0167, longitude: -111.8500, designation: 'State Park' },
+  { id: 'seed_mt_bannack', source: 'state', fullName: 'Bannack State Park', stateCodes: 'MT', latitude: 45.1667, longitude: -113.0167, designation: 'State Historic Park' },
+  { id: 'seed_mt_first_peoples_buffalo_jump', source: 'state', fullName: 'First Peoples Buffalo Jump State Park', stateCodes: 'MT', latitude: 47.5169, longitude: -111.5836, designation: 'State Historic Park' },
+  { id: 'seed_mt_pictograph_cave', source: 'state', fullName: 'Pictograph Cave State Park', stateCodes: 'MT', latitude: 45.7397, longitude: -108.4297, designation: 'State Historic Park' },
+  { id: 'seed_mt_clarks_lookout', source: 'state', fullName: "Clark's Lookout State Park", stateCodes: 'MT', latitude: 45.2167, longitude: -112.6333, designation: 'State Historic Park' },
+  { id: 'seed_mt_fort_owen', source: 'state', fullName: 'Fort Owen State Historic Site', stateCodes: 'MT', latitude: 46.4833, longitude: -114.0167, designation: 'State Historic Park' },
+  { id: 'seed_mt_rosebud_battlefield', source: 'state', fullName: 'Rosebud Battlefield State Park', stateCodes: 'MT', latitude: 45.3333, longitude: -106.6333, designation: 'State Historic Park' },
 ];
 
 export function toFullPark(s: SeedPark): Park {
