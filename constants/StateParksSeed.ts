@@ -774,6 +774,31 @@ const SEEDS: SeedPark[] = [
   { id: 'seed_mt_clarks_lookout', source: 'state', fullName: "Clark's Lookout State Park", stateCodes: 'MT', latitude: 45.2167, longitude: -112.6333, designation: 'State Historic Park' },
   { id: 'seed_mt_fort_owen', source: 'state', fullName: 'Fort Owen State Historic Site', stateCodes: 'MT', latitude: 46.4833, longitude: -114.0167, designation: 'State Historic Park' },
   { id: 'seed_mt_rosebud_battlefield', source: 'state', fullName: 'Rosebud Battlefield State Park', stateCodes: 'MT', latitude: 45.3333, longitude: -106.6333, designation: 'State Historic Park' },
+
+  // ── Nebraska ──
+  { id: 'seed_ne_chadron', source: 'state', fullName: 'Chadron State Park', stateCodes: 'NE', latitude: 42.8167, longitude: -103.0167, designation: 'State Park' },
+  { id: 'seed_ne_ponca', source: 'state', fullName: 'Ponca State Park', stateCodes: 'NE', latitude: 42.5833, longitude: -96.7000, designation: 'State Park' },
+  { id: 'seed_ne_niobrara', source: 'state', fullName: 'Niobrara State Park', stateCodes: 'NE', latitude: 42.7500, longitude: -98.0333, designation: 'State Park' },
+  { id: 'seed_ne_platte_river', source: 'state', fullName: 'Platte River State Park', stateCodes: 'NE', latitude: 41.0042, longitude: -96.1461, designation: 'State Park' },
+  { id: 'seed_ne_mahoney', source: 'state', fullName: 'Mahoney State Park', stateCodes: 'NE', latitude: 41.0264, longitude: -96.3294, designation: 'State Park' },
+  { id: 'seed_ne_indian_cave', source: 'state', fullName: 'Indian Cave State Park', stateCodes: 'NE', latitude: 40.3333, longitude: -95.6000, designation: 'State Park' },
+  { id: 'seed_ne_smith_falls', source: 'state', fullName: 'Smith Falls State Park', stateCodes: 'NE', latitude: 42.7167, longitude: -100.0167, designation: 'State Park' },
+  { id: 'seed_ne_fort_robinson', source: 'state', fullName: 'Fort Robinson State Park', stateCodes: 'NE', latitude: 42.6875, longitude: -103.4500, designation: 'State Park' },
+  { id: 'seed_ne_arbor_lodge', source: 'state', fullName: 'Arbor Lodge State Historical Park', stateCodes: 'NE', latitude: 40.6750, longitude: -95.8597, designation: 'State Historic Park' },
+  { id: 'seed_ne_buffalo_bill_ranch', source: 'state', fullName: 'Buffalo Bill Ranch State Historical Park', stateCodes: 'NE', latitude: 41.1333, longitude: -100.7667, designation: 'State Historic Park' },
+  { id: 'seed_ne_ash_hollow', source: 'state', fullName: 'Ash Hollow State Historical Park', stateCodes: 'NE', latitude: 41.8167, longitude: -102.1000, designation: 'State Historic Park' },
+  { id: 'seed_ne_rock_creek_station', source: 'state', fullName: 'Rock Creek Station State Historical Park', stateCodes: 'NE', latitude: 40.0667, longitude: -97.1167, designation: 'State Historic Park' },
+  { id: 'seed_ne_victorian_campground', source: 'state', fullName: 'Victorian Campground State Recreation Area', stateCodes: 'NE', latitude: 41.0167, longitude: -100.3833, designation: 'State Recreation Area' },
+  { id: 'seed_ne_lewis_and_clark', source: 'state', fullName: 'Lewis and Clark State Recreation Area', stateCodes: 'NE', latitude: 42.8167, longitude: -97.5833, designation: 'State Recreation Area' },
+  { id: 'seed_ne_lake_mcconaughy', source: 'state', fullName: 'Lake McConaughy State Recreation Area', stateCodes: 'NE', latitude: 41.2333, longitude: -101.7500, designation: 'State Recreation Area' },
+  { id: 'seed_ne_lake_ogallala', source: 'state', fullName: 'Lake Ogallala State Recreation Area', stateCodes: 'NE', latitude: 41.1667, longitude: -101.6833, designation: 'State Recreation Area' },
+  { id: 'seed_ne_calamus_reservoir', source: 'state', fullName: 'Calamus Reservoir State Recreation Area', stateCodes: 'NE', latitude: 41.8833, longitude: -99.1500, designation: 'State Recreation Area' },
+  { id: 'seed_ne_sherman_reservoir', source: 'state', fullName: 'Sherman Reservoir State Recreation Area', stateCodes: 'NE', latitude: 41.3167, longitude: -99.0167, designation: 'State Recreation Area' },
+  { id: 'seed_ne_fort_kearny', source: 'state', fullName: 'Fort Kearny State Recreation Area', stateCodes: 'NE', latitude: 40.6500, longitude: -99.0333, designation: 'State Recreation Area' },
+  { id: 'seed_ne_chalco_hills', source: 'state', fullName: 'Chalco Hills Recreation Area', stateCodes: 'NE', latitude: 41.2167, longitude: -96.1500, designation: 'State Recreation Area' },
+  { id: 'seed_ne_enders_reservoir', source: 'state', fullName: 'Enders Reservoir State Recreation Area', stateCodes: 'NE', latitude: 40.4333, longitude: -101.5333, designation: 'State Recreation Area' },
+  { id: 'seed_ne_wildcat_hills', source: 'state', fullName: 'Wildcat Hills State Recreation Area', stateCodes: 'NE', latitude: 41.7500, longitude: -103.6667, designation: 'State Recreation Area' },
+  { id: 'seed_ne_windmill', source: 'state', fullName: 'Windmill State Recreation Area', stateCodes: 'NE', latitude: 40.9333, longitude: -100.1667, designation: 'State Recreation Area' },
 ];
 
 export function toFullPark(s: SeedPark): Park {
