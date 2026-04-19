@@ -799,6 +799,28 @@ const SEEDS: SeedPark[] = [
   { id: 'seed_ne_enders_reservoir', source: 'state', fullName: 'Enders Reservoir State Recreation Area', stateCodes: 'NE', latitude: 40.4333, longitude: -101.5333, designation: 'State Recreation Area' },
   { id: 'seed_ne_wildcat_hills', source: 'state', fullName: 'Wildcat Hills State Recreation Area', stateCodes: 'NE', latitude: 41.7500, longitude: -103.6667, designation: 'State Recreation Area' },
   { id: 'seed_ne_windmill', source: 'state', fullName: 'Windmill State Recreation Area', stateCodes: 'NE', latitude: 40.9333, longitude: -100.1667, designation: 'State Recreation Area' },
+
+  // ── Nevada ──
+  { id: 'seed_nv_valley_of_fire', source: 'state', fullName: 'Valley of Fire State Park', stateCodes: 'NV', latitude: 36.4786, longitude: -114.5361, designation: 'State Park' },
+  { id: 'seed_nv_lake_tahoe_nevada', source: 'state', fullName: 'Lake Tahoe Nevada State Park', stateCodes: 'NV', latitude: 39.2333, longitude: -119.9333, designation: 'State Park' },
+  { id: 'seed_nv_cathedral_gorge', source: 'state', fullName: 'Cathedral Gorge State Park', stateCodes: 'NV', latitude: 37.8167, longitude: -114.4000, designation: 'State Park' },
+  { id: 'seed_nv_kershaw_ryan', source: 'state', fullName: 'Kershaw-Ryan State Park', stateCodes: 'NV', latitude: 37.6167, longitude: -114.5333, designation: 'State Park' },
+  { id: 'seed_nv_spring_mountain_ranch', source: 'state', fullName: 'Spring Mountain Ranch State Park', stateCodes: 'NV', latitude: 36.0667, longitude: -115.4333, designation: 'State Park' },
+  { id: 'seed_nv_beaver_dam', source: 'state', fullName: 'Beaver Dam State Park', stateCodes: 'NV', latitude: 37.9833, longitude: -114.5500, designation: 'State Park' },
+  { id: 'seed_nv_echo_canyon', source: 'state', fullName: 'Echo Canyon State Park', stateCodes: 'NV', latitude: 37.9333, longitude: -114.2667, designation: 'State Park' },
+  { id: 'seed_nv_washoe_lake', source: 'state', fullName: 'Washoe Lake State Park', stateCodes: 'NV', latitude: 39.2667, longitude: -119.7833, designation: 'State Park' },
+  { id: 'seed_nv_cave_lake', source: 'state', fullName: 'Cave Lake State Park', stateCodes: 'NV', latitude: 39.1833, longitude: -114.8167, designation: 'State Park' },
+  { id: 'seed_nv_spring_valley', source: 'state', fullName: 'Spring Valley State Park', stateCodes: 'NV', latitude: 38.0667, longitude: -114.4000, designation: 'State Park' },
+  { id: 'seed_nv_berlin_ichthyosaur', source: 'state', fullName: 'Berlin-Ichthyosaur State Park', stateCodes: 'NV', latitude: 38.9000, longitude: -117.5833, designation: 'State Historic Park' },
+  { id: 'seed_nv_fort_churchill', source: 'state', fullName: 'Fort Churchill State Historic Park', stateCodes: 'NV', latitude: 39.2833, longitude: -119.2667, designation: 'State Historic Park' },
+  { id: 'seed_nv_ward_charcoal_ovens', source: 'state', fullName: 'Ward Charcoal Ovens State Historic Park', stateCodes: 'NV', latitude: 39.0333, longitude: -114.8833, designation: 'State Historic Park' },
+  { id: 'seed_nv_old_las_vegas_mormon_fort', source: 'state', fullName: 'Old Las Vegas Mormon Fort State Historic Park', stateCodes: 'NV', latitude: 36.1772, longitude: -115.1333, designation: 'State Historic Park' },
+  { id: 'seed_nv_buckland_station', source: 'state', fullName: 'Buckland Station State Historic Park', stateCodes: 'NV', latitude: 39.2500, longitude: -119.2000, designation: 'State Historic Park' },
+  { id: 'seed_nv_lahontan', source: 'state', fullName: 'Lahontan State Recreation Area', stateCodes: 'NV', latitude: 39.4667, longitude: -118.8833, designation: 'State Recreation Area' },
+  { id: 'seed_nv_south_fork', source: 'state', fullName: 'South Fork State Recreation Area', stateCodes: 'NV', latitude: 40.6167, longitude: -115.3833, designation: 'State Recreation Area' },
+  { id: 'seed_nv_wild_horse', source: 'state', fullName: 'Wild Horse State Recreation Area', stateCodes: 'NV', latitude: 41.5833, longitude: -116.0833, designation: 'State Recreation Area' },
+  { id: 'seed_nv_rye_patch', source: 'state', fullName: 'Rye Patch State Recreation Area', stateCodes: 'NV', latitude: 40.4833, longitude: -118.2167, designation: 'State Recreation Area' },
+  { id: 'seed_nv_big_bend_colorado', source: 'state', fullName: 'Big Bend of the Colorado State Recreation Area', stateCodes: 'NV', latitude: 35.1167, longitude: -114.6333, designation: 'State Recreation Area' },
 ];
 
 export function toFullPark(s: SeedPark): Park {
