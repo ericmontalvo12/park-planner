@@ -821,6 +821,33 @@ const SEEDS: SeedPark[] = [
   { id: 'seed_nv_wild_horse', source: 'state', fullName: 'Wild Horse State Recreation Area', stateCodes: 'NV', latitude: 41.5833, longitude: -116.0833, designation: 'State Recreation Area' },
   { id: 'seed_nv_rye_patch', source: 'state', fullName: 'Rye Patch State Recreation Area', stateCodes: 'NV', latitude: 40.4833, longitude: -118.2167, designation: 'State Recreation Area' },
   { id: 'seed_nv_big_bend_colorado', source: 'state', fullName: 'Big Bend of the Colorado State Recreation Area', stateCodes: 'NV', latitude: 35.1167, longitude: -114.6333, designation: 'State Recreation Area' },
+
+  // ── New Hampshire ──
+  { id: 'seed_nh_franconia_notch', source: 'state', fullName: 'Franconia Notch State Park', stateCodes: 'NH', latitude: 44.1333, longitude: -71.6833, designation: 'State Park' },
+  { id: 'seed_nh_pawtuckaway', source: 'state', fullName: 'Pawtuckaway State Park', stateCodes: 'NH', latitude: 43.1000, longitude: -71.1667, designation: 'State Park' },
+  { id: 'seed_nh_echo_lake', source: 'state', fullName: 'Echo Lake State Park', stateCodes: 'NH', latitude: 44.0500, longitude: -71.1167, designation: 'State Park' },
+  { id: 'seed_nh_odiorne_point', source: 'state', fullName: 'Odiorne Point State Park', stateCodes: 'NH', latitude: 43.0167, longitude: -70.7333, designation: 'State Park' },
+  { id: 'seed_nh_mount_washington', source: 'state', fullName: 'Mount Washington State Park', stateCodes: 'NH', latitude: 44.2708, longitude: -71.3033, designation: 'State Park' },
+  { id: 'seed_nh_bear_brook', source: 'state', fullName: 'Bear Brook State Park', stateCodes: 'NH', latitude: 43.1167, longitude: -71.3500, designation: 'State Park' },
+  { id: 'seed_nh_milan_hill', source: 'state', fullName: 'Milan Hill State Park', stateCodes: 'NH', latitude: 44.5833, longitude: -71.1833, designation: 'State Park' },
+  { id: 'seed_nh_coleman', source: 'state', fullName: 'Coleman State Park', stateCodes: 'NH', latitude: 44.8833, longitude: -71.3833, designation: 'State Park' },
+  { id: 'seed_nh_mollidgewock', source: 'state', fullName: 'Mollidgewock State Park', stateCodes: 'NH', latitude: 44.7833, longitude: -71.1167, designation: 'State Park' },
+  { id: 'seed_nh_wellington', source: 'state', fullName: 'Wellington State Park', stateCodes: 'NH', latitude: 43.6167, longitude: -71.7167, designation: 'State Park' },
+  { id: 'seed_nh_cardigan_mountain', source: 'state', fullName: 'Cardigan Mountain State Park', stateCodes: 'NH', latitude: 43.6833, longitude: -71.9000, designation: 'State Park' },
+  { id: 'seed_nh_miller', source: 'state', fullName: 'Miller State Park', stateCodes: 'NH', latitude: 42.8667, longitude: -71.9667, designation: 'State Park' },
+  { id: 'seed_nh_monadnock', source: 'state', fullName: 'Monadnock State Park', stateCodes: 'NH', latitude: 42.8583, longitude: -72.1083, designation: 'State Park' },
+  { id: 'seed_nh_weeks', source: 'state', fullName: 'Weeks State Park', stateCodes: 'NH', latitude: 44.4833, longitude: -71.5667, designation: 'State Park' },
+  { id: 'seed_nh_greenfield', source: 'state', fullName: 'Greenfield State Park', stateCodes: 'NH', latitude: 42.9333, longitude: -71.8833, designation: 'State Park' },
+  { id: 'seed_nh_ahern', source: 'state', fullName: 'Ahern State Park', stateCodes: 'NH', latitude: 43.5500, longitude: -71.5167, designation: 'State Park' },
+  { id: 'seed_nh_clough', source: 'state', fullName: 'Clough State Park', stateCodes: 'NH', latitude: 43.0667, longitude: -71.7000, designation: 'State Park' },
+  { id: 'seed_nh_rollins', source: 'state', fullName: 'Rollins State Park', stateCodes: 'NH', latitude: 43.3333, longitude: -71.8167, designation: 'State Park' },
+  { id: 'seed_nh_mount_sunapee', source: 'state', fullName: 'Mount Sunapee State Park', stateCodes: 'NH', latitude: 43.3500, longitude: -72.0833, designation: 'State Park' },
+  { id: 'seed_nh_lake_francis', source: 'state', fullName: 'Lake Francis State Park', stateCodes: 'NH', latitude: 45.0500, longitude: -71.3833, designation: 'State Park' },
+  { id: 'seed_nh_hampton_beach', source: 'state', fullName: 'Hampton Beach State Park', stateCodes: 'NH', latitude: 42.9167, longitude: -70.8167, designation: 'State Beach' },
+  { id: 'seed_nh_wallis_sands', source: 'state', fullName: 'Wallis Sands State Beach', stateCodes: 'NH', latitude: 43.0000, longitude: -70.7333, designation: 'State Beach' },
+  { id: 'seed_nh_fort_stark', source: 'state', fullName: 'Fort Stark Historic Site', stateCodes: 'NH', latitude: 43.0667, longitude: -70.7000, designation: 'State Historic Park' },
+  { id: 'seed_nh_wentworth_coolidge', source: 'state', fullName: 'Wentworth-Coolidge Mansion State Historic Site', stateCodes: 'NH', latitude: 43.0833, longitude: -70.7667, designation: 'State Historic Park' },
+  { id: 'seed_nh_chesterfield_gorge', source: 'state', fullName: 'Chesterfield Gorge Natural Area', stateCodes: 'NH', latitude: 42.9167, longitude: -72.4667, designation: 'State Natural Area' },
 ];
 
 export function toFullPark(s: SeedPark): Park {
