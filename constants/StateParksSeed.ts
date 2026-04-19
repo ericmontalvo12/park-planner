@@ -905,6 +905,32 @@ const SEEDS: SeedPark[] = [
   { id: 'seed_nm_fort_sumner_historic', source: 'state', fullName: 'Fort Sumner Historic Site', stateCodes: 'NM', latitude: 34.4833, longitude: -104.2500, designation: 'State Historic Park' },
   { id: 'seed_nm_lincoln_historic', source: 'state', fullName: 'Lincoln Historic Site', stateCodes: 'NM', latitude: 33.4833, longitude: -105.3833, designation: 'State Historic Park' },
   { id: 'seed_nm_el_camino_real', source: 'state', fullName: 'El Camino Real Historic Trail Site', stateCodes: 'NM', latitude: 34.0167, longitude: -106.9833, designation: 'State Historic Park' },
+
+  // ── New York ──
+  { id: 'seed_ny_niagara_falls', source: 'state', fullName: 'Niagara Falls State Park', stateCodes: 'NY', latitude: 43.0819, longitude: -79.0747, designation: 'State Park' },
+  { id: 'seed_ny_letchworth', source: 'state', fullName: 'Letchworth State Park', stateCodes: 'NY', latitude: 42.5833, longitude: -78.0500, designation: 'State Park' },
+  { id: 'seed_ny_watkins_glen', source: 'state', fullName: 'Watkins Glen State Park', stateCodes: 'NY', latitude: 42.3769, longitude: -76.8711, designation: 'State Park' },
+  { id: 'seed_ny_harriman', source: 'state', fullName: 'Harriman State Park', stateCodes: 'NY', latitude: 41.2167, longitude: -74.1000, designation: 'State Park' },
+  { id: 'seed_ny_bear_mountain', source: 'state', fullName: 'Bear Mountain State Park', stateCodes: 'NY', latitude: 41.3125, longitude: -74.0028, designation: 'State Park' },
+  { id: 'seed_ny_sunken_meadow', source: 'state', fullName: 'Sunken Meadow State Park', stateCodes: 'NY', latitude: 40.9133, longitude: -73.2583, designation: 'State Park' },
+  { id: 'seed_ny_hither_hills', source: 'state', fullName: 'Hither Hills State Park', stateCodes: 'NY', latitude: 41.0667, longitude: -71.9500, designation: 'State Park' },
+  { id: 'seed_ny_whetstone_gulf', source: 'state', fullName: 'Whetstone Gulf State Park', stateCodes: 'NY', latitude: 43.5833, longitude: -75.5500, designation: 'State Park' },
+  { id: 'seed_ny_allegany', source: 'state', fullName: 'Allegany State Park', stateCodes: 'NY', latitude: 42.0833, longitude: -78.7667, designation: 'State Park' },
+  { id: 'seed_ny_saratoga_spa', source: 'state', fullName: 'Saratoga Spa State Park', stateCodes: 'NY', latitude: 43.0711, longitude: -73.7878, designation: 'State Park' },
+  { id: 'seed_ny_thompsons_lake', source: 'state', fullName: "Thompson's Lake State Park", stateCodes: 'NY', latitude: 42.6333, longitude: -74.1500, designation: 'State Park' },
+  { id: 'seed_ny_grafton_lakes', source: 'state', fullName: 'Grafton Lakes State Park', stateCodes: 'NY', latitude: 42.7903, longitude: -73.4356, designation: 'State Park' },
+  { id: 'seed_ny_green_lakes', source: 'state', fullName: 'Green Lakes State Park', stateCodes: 'NY', latitude: 43.0492, longitude: -76.0000, designation: 'State Park' },
+  { id: 'seed_ny_taughannock_falls', source: 'state', fullName: 'Taughannock Falls State Park', stateCodes: 'NY', latitude: 42.5333, longitude: -76.6000, designation: 'State Park' },
+  { id: 'seed_ny_robert_h_treman', source: 'state', fullName: 'Robert H. Treman State Park', stateCodes: 'NY', latitude: 42.3769, longitude: -76.5861, designation: 'State Park' },
+  { id: 'seed_ny_jones_beach', source: 'state', fullName: 'Jones Beach State Park', stateCodes: 'NY', latitude: 40.5917, longitude: -73.5000, designation: 'State Beach' },
+  { id: 'seed_ny_robert_moses', source: 'state', fullName: 'Robert Moses State Park', stateCodes: 'NY', latitude: 40.6167, longitude: -73.2833, designation: 'State Beach' },
+  { id: 'seed_ny_sandy_island_beach', source: 'state', fullName: 'Sandy Island Beach State Park', stateCodes: 'NY', latitude: 43.6000, longitude: -76.1333, designation: 'State Beach' },
+  { id: 'seed_ny_hudson_highlands_preserve', source: 'state', fullName: 'Hudson Highlands State Park Preserve', stateCodes: 'NY', latitude: 41.4333, longitude: -73.9833, designation: 'State Park' },
+  { id: 'seed_ny_minnewaska_preserve', source: 'state', fullName: 'Minnewaska State Park Preserve', stateCodes: 'NY', latitude: 41.7350, longitude: -74.2342, designation: 'State Park' },
+  { id: 'seed_ny_clay_pit_ponds_preserve', source: 'state', fullName: 'Clay Pit Ponds State Park Preserve', stateCodes: 'NY', latitude: 40.5647, longitude: -74.2092, designation: 'State Park' },
+  { id: 'seed_ny_olana', source: 'state', fullName: 'Olana State Historic Site', stateCodes: 'NY', latitude: 42.1833, longitude: -73.8667, designation: 'State Historic Park' },
+  { id: 'seed_ny_clermont', source: 'state', fullName: 'Clermont State Historic Site', stateCodes: 'NY', latitude: 42.0833, longitude: -73.9167, designation: 'State Historic Park' },
+  { id: 'seed_ny_old_croton_aqueduct', source: 'state', fullName: 'Old Croton Aqueduct State Historic Park', stateCodes: 'NY', latitude: 41.1667, longitude: -73.8833, designation: 'State Historic Park' },
 ];
 
 export function toFullPark(s: SeedPark): Park {
