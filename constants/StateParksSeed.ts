@@ -550,6 +550,28 @@ const SEEDS: SeedPark[] = [
   { id: 'seed_la_marksville', source: 'state', fullName: 'Marksville State Historic Site', stateCodes: 'LA', latitude: 31.1333, longitude: -92.0667, designation: 'State Historic Park' },
   { id: 'seed_la_poverty_point', source: 'state', fullName: 'Poverty Point World Heritage Site', stateCodes: 'LA', latitude: 32.6333, longitude: -91.4000, designation: 'State Historic Park' },
   { id: 'seed_la_tunica_hills', source: 'state', fullName: 'Tunica Hills Wildlife Management Area', stateCodes: 'LA', latitude: 30.8667, longitude: -91.3833, designation: 'State Natural Area' },
+
+  // ── Maine ────────────────────────────────────────────────────────────────
+  { id: 'seed_me_baxter', source: 'state', fullName: 'Baxter State Park', stateCodes: 'ME', latitude: 46.1219, longitude: -68.9254, designation: 'State Park' },
+  { id: 'seed_me_camden_hills', source: 'state', fullName: 'Camden Hills State Park', stateCodes: 'ME', latitude: 44.2333, longitude: -69.0667, designation: 'State Park' },
+  { id: 'seed_me_rangeley_lake', source: 'state', fullName: 'Rangeley Lake State Park', stateCodes: 'ME', latitude: 44.9500, longitude: -70.6500, designation: 'State Park' },
+  { id: 'seed_me_bradbury_mountain', source: 'state', fullName: 'Bradbury Mountain State Park', stateCodes: 'ME', latitude: 43.9167, longitude: -70.1833, designation: 'State Park' },
+  { id: 'seed_me_lamoine', source: 'state', fullName: 'Lamoine State Park', stateCodes: 'ME', latitude: 44.4500, longitude: -68.3000, designation: 'State Park' },
+  { id: 'seed_me_reid', source: 'state', fullName: 'Reid State Park', stateCodes: 'ME', latitude: 43.7833, longitude: -69.7333, designation: 'State Park' },
+  { id: 'seed_me_popham_beach', source: 'state', fullName: 'Popham Beach State Park', stateCodes: 'ME', latitude: 43.7500, longitude: -69.7833, designation: 'State Park' },
+  { id: 'seed_me_sebago_lake', source: 'state', fullName: 'Sebago Lake State Park', stateCodes: 'ME', latitude: 43.9167, longitude: -70.5500, designation: 'State Park' },
+  { id: 'seed_me_wolfes_neck', source: 'state', fullName: "Wolfe's Neck Woods State Park", stateCodes: 'ME', latitude: 43.8333, longitude: -70.1000, designation: 'State Park' },
+  { id: 'seed_me_quoddy_head', source: 'state', fullName: 'Quoddy Head State Park', stateCodes: 'ME', latitude: 44.8167, longitude: -66.9500, designation: 'State Park' },
+  { id: 'seed_me_roque_bluffs', source: 'state', fullName: 'Roque Bluffs State Park', stateCodes: 'ME', latitude: 44.5833, longitude: -67.4833, designation: 'State Park' },
+  { id: 'seed_me_warren_island', source: 'state', fullName: 'Warren Island State Park', stateCodes: 'ME', latitude: 44.3000, longitude: -68.9167, designation: 'State Park' },
+  { id: 'seed_me_cobscook_bay', source: 'state', fullName: 'Cobscook Bay State Park', stateCodes: 'ME', latitude: 44.9667, longitude: -67.2000, designation: 'State Park' },
+  { id: 'seed_me_aroostook', source: 'state', fullName: 'Aroostook State Park', stateCodes: 'ME', latitude: 46.7667, longitude: -68.0500, designation: 'State Park' },
+  { id: 'seed_me_allagash', source: 'state', fullName: 'Allagash Wilderness Waterway', stateCodes: 'ME', latitude: 46.5000, longitude: -69.3333, designation: 'State Natural Area' },
+  { id: 'seed_me_debsconeag', source: 'state', fullName: 'Debsconeag Lakes Wilderness Area', stateCodes: 'ME', latitude: 45.8167, longitude: -69.0500, designation: 'State Natural Area' },
+  { id: 'seed_me_bigelow_preserve', source: 'state', fullName: 'Bigelow Preserve', stateCodes: 'ME', latitude: 45.1167, longitude: -70.3167, designation: 'State Natural Area' },
+  { id: 'seed_me_fort_knox', source: 'state', fullName: 'Fort Knox State Historic Site', stateCodes: 'ME', latitude: 44.5833, longitude: -68.8167, designation: 'State Historic Park' },
+  { id: 'seed_me_old_fort_western', source: 'state', fullName: 'Old Fort Western State Historic Site', stateCodes: 'ME', latitude: 44.3167, longitude: -69.7667, designation: 'State Historic Park' },
+  { id: 'seed_me_colonial_pemaquid', source: 'state', fullName: 'Colonial Pemaquid State Historic Site', stateCodes: 'ME', latitude: 43.8667, longitude: -69.5500, designation: 'State Historic Park' },
 ];
 
 export function toFullPark(s: SeedPark): Park {
