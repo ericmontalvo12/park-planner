@@ -720,6 +720,33 @@ const SEEDS: SeedPark[] = [
   { id: 'seed_ms_historic_jefferson_college', source: 'state', fullName: 'Historic Jefferson College', stateCodes: 'MS', latitude: 31.5500, longitude: -91.4333, designation: 'State Historic Park' },
   { id: 'seed_ms_old_capitol_museum', source: 'state', fullName: 'Old Capitol Museum', stateCodes: 'MS', latitude: 32.2989, longitude: -90.1856, designation: 'State Historic Park' },
   { id: 'seed_ms_florewood_plantation', source: 'state', fullName: 'Florewood River Plantation State Park', stateCodes: 'MS', latitude: 33.3667, longitude: -90.6667, designation: 'State Historic Park' },
+
+  // ── Missouri ──
+  { id: 'seed_mo_hawn', source: 'state', fullName: 'Hawn State Park', stateCodes: 'MO', latitude: 37.8361, longitude: -90.2258, designation: 'State Park' },
+  { id: 'seed_mo_johnsons_shut_ins', source: 'state', fullName: "Johnson's Shut-Ins State Park", stateCodes: 'MO', latitude: 37.5556, longitude: -90.8486, designation: 'State Park' },
+  { id: 'seed_mo_elephant_rocks', source: 'state', fullName: 'Elephant Rocks State Park', stateCodes: 'MO', latitude: 37.6111, longitude: -90.7167, designation: 'State Park' },
+  { id: 'seed_mo_table_rock', source: 'state', fullName: 'Table Rock State Park', stateCodes: 'MO', latitude: 36.5822, longitude: -93.3078, designation: 'State Park' },
+  { id: 'seed_mo_lake_of_the_ozarks', source: 'state', fullName: 'Lake of the Ozarks State Park', stateCodes: 'MO', latitude: 38.0167, longitude: -92.6667, designation: 'State Park' },
+  { id: 'seed_mo_meramec', source: 'state', fullName: 'Meramec State Park', stateCodes: 'MO', latitude: 38.2167, longitude: -91.1833, designation: 'State Park' },
+  { id: 'seed_mo_ha_ha_tonka', source: 'state', fullName: 'Ha Ha Tonka State Park', stateCodes: 'MO', latitude: 37.9786, longitude: -92.7311, designation: 'State Park' },
+  { id: 'seed_mo_crowder', source: 'state', fullName: 'Crowder State Park', stateCodes: 'MO', latitude: 40.0833, longitude: -93.6167, designation: 'State Park' },
+  { id: 'seed_mo_echo_bluff', source: 'state', fullName: 'Echo Bluff State Park', stateCodes: 'MO', latitude: 37.1000, longitude: -91.3667, designation: 'State Park' },
+  { id: 'seed_mo_mark_twain', source: 'state', fullName: 'Mark Twain State Park', stateCodes: 'MO', latitude: 39.5149, longitude: -92.1869, designation: 'State Park' },
+  { id: 'seed_mo_sam_a_baker', source: 'state', fullName: 'Sam A. Baker State Park', stateCodes: 'MO', latitude: 37.2500, longitude: -90.5167, designation: 'State Park' },
+  { id: 'seed_mo_roaring_river', source: 'state', fullName: 'Roaring River State Park', stateCodes: 'MO', latitude: 36.5844, longitude: -93.8183, designation: 'State Park' },
+  { id: 'seed_mo_current_river', source: 'state', fullName: 'Current River State Park', stateCodes: 'MO', latitude: 37.0167, longitude: -91.0167, designation: 'State Park' },
+  { id: 'seed_mo_bennett_spring', source: 'state', fullName: 'Bennett Spring State Park', stateCodes: 'MO', latitude: 37.7198, longitude: -92.8516, designation: 'State Park' },
+  { id: 'seed_mo_pomme_de_terre', source: 'state', fullName: 'Pomme de Terre State Park', stateCodes: 'MO', latitude: 37.9167, longitude: -93.3167, designation: 'State Park' },
+  { id: 'seed_mo_st_francois', source: 'state', fullName: 'St. Francois State Park', stateCodes: 'MO', latitude: 37.9333, longitude: -90.5500, designation: 'State Park' },
+  { id: 'seed_mo_confluence_point', source: 'state', fullName: 'Confluence Point State Park', stateCodes: 'MO', latitude: 38.8167, longitude: -90.2167, designation: 'State Park' },
+  { id: 'seed_mo_rock_bridge_memorial', source: 'state', fullName: 'Rock Bridge Memorial State Park', stateCodes: 'MO', latitude: 38.8851, longitude: -92.3828, designation: 'State Park' },
+  { id: 'seed_mo_big_lake', source: 'state', fullName: 'Big Lake State Park', stateCodes: 'MO', latitude: 40.0667, longitude: -95.3833, designation: 'State Park' },
+  { id: 'seed_mo_watkins_woolen_mill', source: 'state', fullName: 'Watkins Woolen Mill State Historic Site', stateCodes: 'MO', latitude: 39.4333, longitude: -94.3500, designation: 'State Historic Park' },
+  { id: 'seed_mo_arrow_rock', source: 'state', fullName: 'Arrow Rock State Historic Site', stateCodes: 'MO', latitude: 39.0667, longitude: -92.9500, designation: 'State Historic Park' },
+  { id: 'seed_mo_dillard_mill', source: 'state', fullName: 'Dillard Mill State Historic Site', stateCodes: 'MO', latitude: 37.6500, longitude: -91.4500, designation: 'State Historic Park' },
+  { id: 'seed_mo_truman_birthplace', source: 'state', fullName: 'Harry S. Truman Birthplace State Historic Site', stateCodes: 'MO', latitude: 37.4958, longitude: -94.2778, designation: 'State Historic Park' },
+  { id: 'seed_mo_mark_twain_boyhood', source: 'state', fullName: 'Mark Twain Boyhood Home State Historic Site', stateCodes: 'MO', latitude: 39.7083, longitude: -91.3583, designation: 'State Historic Park' },
+  { id: 'seed_mo_mastodon', source: 'state', fullName: 'Mastodon State Historic Site', stateCodes: 'MO', latitude: 38.4167, longitude: -90.3833, designation: 'State Historic Park' },
 ];
 
 export function toFullPark(s: SeedPark): Park {
