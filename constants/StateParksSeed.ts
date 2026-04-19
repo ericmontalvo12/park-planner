@@ -701,6 +701,25 @@ const SEEDS: SeedPark[] = [
   { id: 'seed_mn_william_obrien', source: 'state', fullName: "William O'Brien State Park", stateCodes: 'MN', latitude: 45.1833, longitude: -92.7667, designation: 'State Park' },
   { id: 'seed_mn_wild_river', source: 'state', fullName: 'Wild River State Park', stateCodes: 'MN', latitude: 45.6000, longitude: -92.7833, designation: 'State Park' },
   { id: 'seed_mn_zippel_bay', source: 'state', fullName: 'Zippel Bay State Park', stateCodes: 'MN', latitude: 48.8500, longitude: -94.9167, designation: 'State Park' },
+
+  // ── Mississippi ──
+  { id: 'seed_ms_tishomingo', source: 'state', fullName: 'Tishomingo State Park', stateCodes: 'MS', latitude: 34.5753, longitude: -88.1872, designation: 'State Park' },
+  { id: 'seed_ms_percy_quin', source: 'state', fullName: 'Percy Quin State Park', stateCodes: 'MS', latitude: 31.2333, longitude: -90.4833, designation: 'State Park' },
+  { id: 'seed_ms_lake_lowndes', source: 'state', fullName: 'Lake Lowndes State Park', stateCodes: 'MS', latitude: 33.4167, longitude: -88.3333, designation: 'State Park' },
+  { id: 'seed_ms_wall_doxey', source: 'state', fullName: 'Wall Doxey State Park', stateCodes: 'MS', latitude: 34.7500, longitude: -89.4667, designation: 'State Park' },
+  { id: 'seed_ms_paul_b_johnson', source: 'state', fullName: 'Paul B. Johnson State Park', stateCodes: 'MS', latitude: 31.1667, longitude: -89.3167, designation: 'State Park' },
+  { id: 'seed_ms_roosevelt', source: 'state', fullName: 'Roosevelt State Park', stateCodes: 'MS', latitude: 32.3333, longitude: -89.6500, designation: 'State Park' },
+  { id: 'seed_ms_clarkco', source: 'state', fullName: 'Clarkco State Park', stateCodes: 'MS', latitude: 32.0833, longitude: -88.7500, designation: 'State Park' },
+  { id: 'seed_ms_tombigbee', source: 'state', fullName: 'Tombigbee State Park', stateCodes: 'MS', latitude: 34.1833, longitude: -88.6667, designation: 'State Park' },
+  { id: 'seed_ms_george_p_cossar', source: 'state', fullName: 'George P. Cossar State Park', stateCodes: 'MS', latitude: 34.1500, longitude: -89.9333, designation: 'State Park' },
+  { id: 'seed_ms_john_w_kyle', source: 'state', fullName: 'John W. Kyle State Park', stateCodes: 'MS', latitude: 34.4167, longitude: -89.9167, designation: 'State Park' },
+  { id: 'seed_ms_trace', source: 'state', fullName: 'Trace State Park', stateCodes: 'MS', latitude: 34.3167, longitude: -88.7000, designation: 'State Park' },
+  { id: 'seed_ms_legion', source: 'state', fullName: 'Legion State Park', stateCodes: 'MS', latitude: 33.1000, longitude: -89.0833, designation: 'State Park' },
+  { id: 'seed_ms_winterville_mounds', source: 'state', fullName: 'Winterville Mounds State Historic Site', stateCodes: 'MS', latitude: 33.3667, longitude: -91.0667, designation: 'State Historic Park' },
+  { id: 'seed_ms_grand_village_natchez', source: 'state', fullName: 'Grand Village of the Natchez Indians', stateCodes: 'MS', latitude: 31.5333, longitude: -91.3833, designation: 'State Historic Park' },
+  { id: 'seed_ms_historic_jefferson_college', source: 'state', fullName: 'Historic Jefferson College', stateCodes: 'MS', latitude: 31.5500, longitude: -91.4333, designation: 'State Historic Park' },
+  { id: 'seed_ms_old_capitol_museum', source: 'state', fullName: 'Old Capitol Museum', stateCodes: 'MS', latitude: 32.2989, longitude: -90.1856, designation: 'State Historic Park' },
+  { id: 'seed_ms_florewood_plantation', source: 'state', fullName: 'Florewood River Plantation State Park', stateCodes: 'MS', latitude: 33.3667, longitude: -90.6667, designation: 'State Historic Park' },
 ];
 
 export function toFullPark(s: SeedPark): Park {
