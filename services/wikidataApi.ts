@@ -1,7 +1,7 @@
 import { type SQLiteDatabase } from 'expo-sqlite';
 import { SEEDS, toFullPark } from '../constants/StateParksSeed';
 
-const SEED_KEY = 'seed_loaded_v3';
+const SEED_KEY = 'seed_loaded_v4';
 
 async function isSeedLoaded(db: SQLiteDatabase): Promise<boolean> {
   const row = await db.getFirstAsync<{ value: string }>(

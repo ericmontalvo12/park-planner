@@ -1003,12 +1003,64 @@ const SEEDS: SeedPark[] = [
   { id: 'seed_oh_fort_ancient', source: 'state', fullName: 'Fort Ancient State Memorial', stateCodes: 'OH', latitude: 39.4167, longitude: -84.0833, designation: 'State Historic Park' },
 ];
 
+// Infer activities based on park name and designation
+function inferActivities(name: string, designation: string): string[] {
+  const activities: string[] = [];
+  const lower = (name + ' ' + designation).toLowerCase();
+
+  // Base activities most state parks have
+  activities.push('Hiking', 'Wildlife Viewing', 'Photography', 'Picnicking');
+
+  // Water-related
+  if (/lake|reservoir|river|creek|falls|spring|bay|cove/.test(lower)) {
+    activities.push('Fishing', 'Swimming', 'Kayaking', 'Boating');
+  }
+
+  // Beach/coastal
+  if (/beach|coast|shore|ocean|sea|dune/.test(lower)) {
+    activities.push('Swimming', 'Beach Camping', 'Surfing');
+  }
+
+  // Mountain/trail
+  if (/mountain|peak|ridge|trail|gorge|canyon|cliff/.test(lower)) {
+    activities.push('Backpacking', 'Rock Climbing', 'Scenic Drives');
+  }
+
+  // Forest
+  if (/forest|woods|grove|tree/.test(lower)) {
+    activities.push('Bird Watching', 'Backpacking', 'Tent Camping');
+  }
+
+  // Cave
+  if (/cave|cavern/.test(lower)) {
+    activities.push('Caving');
+  }
+
+  // Historic sites - fewer outdoor activities
+  if (/historic|memorial|battlefield|museum/.test(lower)) {
+    return ['Hiking', 'Photography', 'Wildlife Viewing', 'Picnicking'];
+  }
+
+  // Recreation areas typically have more amenities
+  if (/recreation|resort/.test(lower)) {
+    activities.push('RV/Car Camping', 'Tent Camping', 'Group Camping');
+  }
+
+  // General state parks usually allow camping
+  if (/state park/.test(lower) && !/historic|memorial/.test(lower)) {
+    activities.push('Tent Camping', 'RV/Car Camping');
+  }
+
+  // Remove duplicates
+  return [...new Set(activities)];
+}
+
 export function toFullPark(s: SeedPark): Park {
   return {
     ...s,
     description: '',
     imageUrl: null,
-    activities: [],
+    activities: inferActivities(s.fullName, s.designation),
     entranceFeeCents: 0,
     rawJson: '{}',
     lastSynced: NOW,
