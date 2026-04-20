@@ -68,9 +68,11 @@ export default function ResultsScreen() {
 
       getAllParks(db).then((parks) => {
         if (!active) return;
+        // Only use national parks for recommendations (they have accurate activity data)
+        const nationalParks = parks.filter((p) => p.source === 'nps');
         const lat = preferences.latitude ?? undefined;
         const lon = preferences.longitude ?? undefined;
-        const ranked = rankParks(parks, preferences, lat, lon);
+        const ranked = rankParks(nationalParks, preferences, lat, lon);
         const scored: ScoredPark[] = ranked.map((park) => ({
           park,
           score: scorePark(park, preferences),
