@@ -7,7 +7,6 @@
     "scheme": "parkplanner",
     "userInterfaceStyle": "automatic",
     "sdkVersion": "55.0.0",
-    "newArchEnabled": true,
     "icon": "./assets/icon.png",
     "splash": {
       "backgroundColor": "#2D7D46",
@@ -16,7 +15,6 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.ericmontalvo.parkplanner",
-      "minimumOsVersion": "16.0",
       "infoPlist": {
         "NSLocationWhenInUseUsageDescription": "Park Planner uses your location to find nearby parks.",
         "ITSAppUsesNonExemptEncryption": false
@@ -76,7 +74,8 @@
         {
           "enableFTS": false
         }
-      ]
+      ],
+      "expo-font"
     ],
     "experiments": {
       "typedRoutes": true
