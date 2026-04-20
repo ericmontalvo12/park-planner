@@ -20,29 +20,38 @@ export async function syncStateParksFromWikidata(
   progressCallback?.('Loading state parks…');
   const now = Date.now();
 
-  // Wipe all existing state parks so seed is the authoritative list
-  await db.runAsync("DELETE FROM parks WHERE source = 'state'");
+  // Use a transaction for much faster bulk inserts
+  await db.withTransactionAsync(async () => {
+    // Wipe all existing state parks so seed is the authoritative list
+    await db.runAsync("DELETE FROM parks WHERE source = 'state'");
 
-  for (const seed of SEEDS) {
-    const park = toFullPark(seed);
-    await db.runAsync(
+    // Prepare the insert statement once
+    const stmt = await db.prepareAsync(
       `INSERT INTO parks
         (id, source, full_name, description, state_codes, latitude, longitude,
          designation, image_url, activities, entrance_fee_cents, raw_json, last_synced)
-       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-      [
-        park.id, park.source, park.fullName, park.description,
-        park.stateCodes, park.latitude, park.longitude, park.designation,
-        park.imageUrl, JSON.stringify(park.activities),
-        park.entranceFeeCents, park.rawJson, now,
-      ],
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
     );
-  }
 
-  await db.runAsync(
-    'INSERT OR REPLACE INTO kv_store (key, value) VALUES (?, ?)',
-    [SEED_KEY, String(now)],
-  );
+    try {
+      for (const seed of SEEDS) {
+        const park = toFullPark(seed);
+        await stmt.executeAsync([
+          park.id, park.source, park.fullName, park.description,
+          park.stateCodes, park.latitude, park.longitude, park.designation,
+          park.imageUrl, JSON.stringify(park.activities),
+          park.entranceFeeCents, park.rawJson, now,
+        ]);
+      }
+    } finally {
+      await stmt.finalizeAsync();
+    }
+
+    await db.runAsync(
+      'INSERT OR REPLACE INTO kv_store (key, value) VALUES (?, ?)',
+      [SEED_KEY, String(now)],
+    );
+  });
 
   progressCallback?.(null);
 }
