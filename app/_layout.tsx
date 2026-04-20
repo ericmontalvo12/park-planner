@@ -53,14 +53,20 @@ function AppNavigator({
       databaseName="parkplanner.db"
       onInit={async (db) => {
         await initDatabase(db);
-        await syncNpsParks(db).catch(console.warn);
+        try {
+          await syncNpsParks(db);
+        } catch (e) {
+          console.warn('NPS sync failed:', e);
+        }
         setSyncSignal((s) => s + 1);
-        syncStateParksFromWikidata(db, (msg) => setSyncMessage(msg))
-          .catch(console.warn)
-          .finally(() => {
-            setSyncMessage(null);
-            setSyncSignal((s) => s + 1);
-          });
+        try {
+          await syncStateParksFromWikidata(db, (msg) => setSyncMessage(msg));
+        } catch (e) {
+          console.warn('State parks sync failed:', e);
+        } finally {
+          setSyncMessage(null);
+          setSyncSignal((s) => s + 1);
+        }
       }}
     >
       <StatusBar style="auto" />
