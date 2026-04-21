@@ -159,7 +159,7 @@ export default function PlanScreen() {
         />
       </Section>
 
-      <Section title="Location" colors={colors}>
+      <Section title="Where do you want to camp?" colors={colors}>
         <LocationInput
           value={{
             state: prefs.locationState,
