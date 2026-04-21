@@ -105,17 +105,25 @@ export function rankParks(
   lat?: number,
   lon?: number,
 ): Park[] {
-  // 1. Budget filter
+  // 1. State filter — only show parks in the selected state
   let filtered = parks;
-  if (prefs.budget === 'free') {
-    filtered = parks.filter((p) => p.entranceFeeCents === 0);
-  } else if (prefs.budget === 'under15') {
-    filtered = parks.filter((p) => p.entranceFeeCents <= 1500);
-  } else if (prefs.budget === 'under30') {
-    filtered = parks.filter((p) => p.entranceFeeCents <= 3000);
+  if (prefs.locationState) {
+    const state = prefs.locationState.toUpperCase();
+    filtered = filtered.filter((p) =>
+      p.stateCodes.split(',').map((s) => s.trim().toUpperCase()).includes(state),
+    );
   }
 
-  // 2. Score each park
+  // 2. Budget filter
+  if (prefs.budget === 'free') {
+    filtered = filtered.filter((p) => p.entranceFeeCents === 0);
+  } else if (prefs.budget === 'under15') {
+    filtered = filtered.filter((p) => p.entranceFeeCents <= 1500);
+  } else if (prefs.budget === 'under30') {
+    filtered = filtered.filter((p) => p.entranceFeeCents <= 3000);
+  }
+
+  // 3. Score each park
   const scored = filtered.map((park) => ({
     park,
     score: scorePark(park, prefs),

@@ -12,7 +12,6 @@ import { StatusBar } from 'expo-status-bar';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { initDatabase } from '../db/migrations';
 import { syncNpsParks } from '../services/npsApi';
-import { syncStateParksFromWikidata } from '../services/wikidataApi';
 import { SyncSignalContext } from '../contexts/SyncSignalContext';
 import Colors from '../constants/Colors';
 
@@ -55,12 +54,6 @@ function AppNavigator({
         await initDatabase(db);
         await syncNpsParks(db).catch(console.warn);
         setSyncSignal((s) => s + 1);
-        syncStateParksFromWikidata(db, (msg) => setSyncMessage(msg))
-          .catch(console.warn)
-          .finally(() => {
-            setSyncMessage(null);
-            setSyncSignal((s) => s + 1);
-          });
       }}
     >
       <StatusBar style="auto" />

@@ -31,4 +31,8 @@ export async function initDatabase(db: SQLiteDatabase): Promise<void> {
       value TEXT NOT NULL
     );
   `);
+
+  // Remove any state parks loaded by previous versions — app is NPS-only now
+  await db.runAsync("DELETE FROM parks WHERE source = 'state'");
+  await db.runAsync("DELETE FROM kv_store WHERE key LIKE 'seed_loaded%'");
 }
