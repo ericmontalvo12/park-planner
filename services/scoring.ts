@@ -1,73 +1,106 @@
 import { type Park, type Preferences } from '../types';
 
 export function haversineKm(
-  lat1: number,
-  lon1: number,
-  lat2: number,
-  lon2: number,
+  lat1: number, lon1: number,
+  lat2: number, lon2: number,
 ): number {
   const R = 6371;
   const dLat = ((lat2 - lat1) * Math.PI) / 180;
   const dLon = ((lon2 - lon1) * Math.PI) / 180;
   const a =
-    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.sin(dLat / 2) ** 2 +
     Math.cos((lat1 * Math.PI) / 180) *
-      Math.cos((lat2 * Math.PI) / 180) *
-      Math.sin(dLon / 2) *
-      Math.sin(dLon / 2);
-  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-  return R * c;
+    Math.cos((lat2 * Math.PI) / 180) *
+    Math.sin(dLon / 2) ** 2;
+  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 }
 
 const SCENERY_KEYWORDS: Record<string, string[]> = {
-  Mountains: ['mountain', 'alpine', 'peak', 'summit', 'rocky', 'sierra', 'cascade', 'teton', 'olympic', 'denali', 'rainier'],
-  'Ocean/Coast': ['coast', 'coastal', 'ocean', 'sea', 'shore', 'beach', 'seashore', 'cape', 'island', 'biscayne', 'acadia', 'channel', 'virgin', 'dry tortugas'],
-  Desert: ['desert', 'arid', 'badlands', 'mesa', 'saguaro', 'joshua', 'mojave', 'chihuahuan', 'death valley'],
-  Forest: ['forest', 'redwood', 'sequoia', 'woodland', 'rainforest', 'conifer', 'spruce', 'pine', 'olympic'],
-  'Lakes/Rivers': ['lake', 'river', 'waterway', 'water', 'falls', 'stream', 'creek', 'basin', 'reservoir', 'voyageurs'],
-  Canyons: ['canyon', 'gorge', 'ravine', 'chasm', 'gulch', 'bryce', 'zion', 'canyonlands', 'grand canyon', 'black canyon'],
-  Glaciers: ['glacier', 'glacial', 'kenai', 'denali', 'rainier', 'north cascades', 'wrangell'],
-  'Wetlands/Swamps': ['wetland', 'swamp', 'marsh', 'everglades', 'bog', 'bayou', 'congaree'],
-  'Prairie/Grassland': ['prairie', 'grassland', 'plain', 'savanna', 'great plains', 'theodore roosevelt'],
-  Volcanic: ['volcanic', 'volcano', 'lava', 'crater', 'caldera', 'hawaii', 'katmai', 'craters of the moon'],
-  Tropical: ['tropical', 'hawaii', 'rainforest', 'coral', 'reef', 'virgin islands', 'american samoa'],
-  Tundra: ['tundra', 'arctic', 'denali', 'alaska', 'gates of the arctic', 'kobuk'],
-  Caves: ['cave', 'cavern', 'mammoth', 'carlsbad', 'jewel', 'wind'],
-  Waterfalls: ['falls', 'waterfall', 'cascade', 'yosemite', 'olympic'],
-  Dunes: ['dune', 'sand', 'great sand', 'white sands', 'indiana'],
-  Meadows: ['meadow', 'valley', 'shenandoah', 'great smoky'],
-  Cliffs: ['cliff', 'arch', 'mesa', 'rim', 'pinnacles', 'arches', 'petrified', 'painted'],
-  'Hot Springs': ['hot spring', 'thermal', 'geyser', 'yellowstone', 'hot springs'],
+  Mountains:          ['mountain', 'alpine', 'peak', 'summit', 'rocky', 'sierra', 'cascade', 'teton', 'olympic', 'denali', 'rainier'],
+  'Ocean/Coast':      ['coast', 'coastal', 'ocean', 'sea', 'shore', 'beach', 'seashore', 'cape', 'island', 'biscayne', 'acadia', 'channel', 'virgin', 'dry tortugas'],
+  Desert:             ['desert', 'arid', 'badlands', 'mesa', 'saguaro', 'joshua', 'mojave', 'chihuahuan', 'death valley'],
+  Forest:             ['forest', 'redwood', 'sequoia', 'woodland', 'rainforest', 'conifer', 'spruce', 'pine', 'olympic'],
+  'Lakes/Rivers':     ['lake', 'river', 'waterway', 'water', 'falls', 'stream', 'creek', 'basin', 'reservoir', 'voyageurs'],
+  Canyons:            ['canyon', 'gorge', 'ravine', 'chasm', 'gulch', 'bryce', 'zion', 'canyonlands', 'grand canyon', 'black canyon'],
+  Glaciers:           ['glacier', 'glacial', 'kenai', 'denali', 'rainier', 'north cascades', 'wrangell'],
+  'Wetlands/Swamps':  ['wetland', 'swamp', 'marsh', 'everglades', 'bog', 'bayou', 'congaree'],
+  'Prairie/Grassland':['prairie', 'grassland', 'plain', 'savanna', 'great plains', 'theodore roosevelt'],
+  Volcanic:           ['volcanic', 'volcano', 'lava', 'crater', 'caldera', 'hawaii', 'katmai', 'craters of the moon'],
+  Tropical:           ['tropical', 'hawaii', 'rainforest', 'coral', 'reef', 'virgin islands', 'american samoa'],
+  Tundra:             ['tundra', 'arctic', 'denali', 'alaska', 'gates of the arctic', 'kobuk'],
+  Caves:              ['cave', 'cavern', 'mammoth', 'carlsbad', 'jewel', 'wind'],
+  Waterfalls:         ['falls', 'waterfall', 'cascade', 'yosemite', 'olympic'],
+  Dunes:              ['dune', 'sand', 'great sand', 'white sands', 'indiana'],
+  Meadows:            ['meadow', 'valley', 'shenandoah', 'great smoky'],
+  Cliffs:             ['cliff', 'arch', 'mesa', 'rim', 'pinnacles', 'arches', 'petrified', 'painted'],
+  'Hot Springs':      ['hot spring', 'thermal', 'geyser', 'yellowstone', 'hot springs'],
 };
 
-function intersectionCount(a: string[], b: string[]): number {
-  const bSet = new Set(b.map((s) => s.toLowerCase()));
-  return a.filter((s) => bSet.has(s.toLowerCase())).length;
+// Maps each app label → NPS API activity names that count as a match
+const ACTIVITY_ALIASES: Record<string, string[]> = {
+  'Hiking':                  ['Hiking'],
+  'Camping':                 ['Camping', 'Backcountry Camping', 'Car or Front Country Camping', 'RV Camping', 'Group Camping'],
+  'Swimming':                ['Swimming'],
+  'Fishing':                 ['Fishing'],
+  'Rock Climbing':           ['Rock Climbing', 'Climbing'],
+  'Kayaking':                ['Kayaking', 'Paddling'],
+  'Cycling':                 ['Bicycling', 'Cycling'],
+  'Wildlife Viewing':        ['Wildlife Watching', 'Wildlife Viewing'],
+  'Bird Watching':           ['Birdwatching', 'Bird Watching', 'Birding'],
+  'Photography':             ['Photography'],
+  'Stargazing':              ['Stargazing', 'Astronomy'],
+  'Backpacking':             ['Backpacking', 'Backcountry Camping'],
+  'Snowshoeing':             ['Snowshoeing'],
+  'Cross-Country Skiing':    ['Cross-Country Skiing'],
+  'Horseback Riding':        ['Horseback Riding'],
+  'Snorkeling':              ['Snorkeling'],
+  'Surfing':                 ['Surfing'],
+  'Caving':                  ['Caving'],
+  'Waterfall Chasing':       ['Hiking', 'Waterfall'],
+  'Scenic Drives':           ['Scenic Driving', 'Scenic Drives'],
+  'Picnicking':              ['Picnicking'],
+  'Off-Roading':             ['Off-Road Driving', 'Motor Sports'],
+  'Stand-Up Paddleboarding': ['Stand Up Paddleboarding', 'Paddleboarding', 'Paddling'],
+  'Sailing':                 ['Sailing', 'Boating'],
+  'Mountain Biking':         ['Mountain Biking', 'Biking'],
+  'Hot Springs':             ['Hot Springs'],
+  // Camping styles
+  'Tent Camping':            ['Camping', 'Car or Front Country Camping'],
+  'RV/Car Camping':          ['RV Camping', 'Car or Front Country Camping', 'Camping'],
+  'Backcountry':             ['Backcountry Camping', 'Backpacking'],
+  'Glamping':                ['Glamping'],
+  'Cabin/Yurt':              ['Cabin Camping'],
+  'Group Camping':           ['Group Camping'],
+  'Beach Camping':           ['Beach Camping', 'Camping'],
+  'Desert Camping':          ['Camping'],
+  'Alpine Camping':          ['Backcountry Camping', 'Camping'],
+  'Hammock Camping':         ['Hammock Camping'],
+  'No Camping':              [],
+};
+
+function labelMatchesPark(label: string, parkActivitySet: Set<string>): boolean {
+  const aliases = ACTIVITY_ALIASES[label]?.map((a) => a.toLowerCase()) ?? [label.toLowerCase()];
+  return aliases.some((a) => parkActivitySet.has(a));
+}
+
+function matchCount(userLabels: string[], parkActivities: string[]): number {
+  const parkSet = new Set(parkActivities.map((a) => a.toLowerCase()));
+  return userLabels.filter((label) => labelMatchesPark(label, parkSet)).length;
 }
 
 export function getMatchedActivities(park: Park, prefs: Preferences): string[] {
-  const selected = new Set(
-    [...prefs.activities, ...prefs.campingStyles].map((s) => s.toLowerCase()),
+  const parkSet = new Set(park.activities.map((a) => a.toLowerCase()));
+  return [...prefs.activities, ...prefs.campingStyles].filter((label) =>
+    labelMatchesPark(label, parkSet),
   );
-  return park.activities.filter((a) => selected.has(a.toLowerCase()));
 }
 
 function scoreScenery(park: Park, vibes: string[]): number {
   if (vibes.length === 0) return 0;
-  const haystack = (
-    park.fullName +
-    ' ' +
-    park.designation +
-    ' ' +
-    park.description.slice(0, 300)
-  ).toLowerCase();
-  let matches = 0;
-  for (const vibe of vibes) {
-    const keywords = SCENERY_KEYWORDS[vibe] ?? [];
-    if (keywords.some((kw) => haystack.includes(kw))) {
-      matches++;
-    }
-  }
+  const haystack = `${park.fullName} ${park.designation} ${park.description.slice(0, 300)}`.toLowerCase();
+  const matches = vibes.filter((vibe) =>
+    (SCENERY_KEYWORDS[vibe] ?? []).some((kw) => haystack.includes(kw)),
+  ).length;
   return matches / vibes.length;
 }
 
@@ -77,13 +110,11 @@ export function scorePark(park: Park, prefs: Preferences): number {
   const hasScenery = prefs.sceneryVibes.length > 0;
 
   const activityScore = hasActivities
-    ? intersectionCount(park.activities, prefs.activities) / prefs.activities.length
+    ? matchCount(prefs.activities, park.activities) / prefs.activities.length
     : 0;
-
   const campingScore = hasCamping
-    ? intersectionCount(park.activities, prefs.campingStyles) / prefs.campingStyles.length
+    ? matchCount(prefs.campingStyles, park.activities) / prefs.campingStyles.length
     : 0;
-
   const sceneryScore = hasScenery ? scoreScenery(park, prefs.sceneryVibes) : 0;
 
   const activityWeight = hasActivities ? 0.45 : 0;
@@ -92,11 +123,10 @@ export function scorePark(park: Park, prefs: Preferences): number {
   const totalWeight = activityWeight + campingWeight + sceneryWeight || 1;
 
   return (
-    (activityScore * activityWeight +
-      campingScore * campingWeight +
-      sceneryScore * sceneryWeight) /
-    totalWeight
-  );
+    activityScore * activityWeight +
+    campingScore * campingWeight +
+    sceneryScore * sceneryWeight
+  ) / totalWeight;
 }
 
 export function rankParks(
@@ -105,7 +135,7 @@ export function rankParks(
   lat?: number,
   lon?: number,
 ): Park[] {
-  // 1. State filter — only show parks in the selected state
+  // 1. State filter
   let filtered = parks;
   if (prefs.locationState) {
     const state = prefs.locationState.toUpperCase();
@@ -123,7 +153,7 @@ export function rankParks(
     filtered = filtered.filter((p) => p.entranceFeeCents <= 3000);
   }
 
-  // 3. Score each park
+  // 3. Score and sort
   const scored = filtered.map((park) => ({
     park,
     score: scorePark(park, prefs),
@@ -133,12 +163,10 @@ export function rankParks(
         : Infinity,
   }));
 
-  // 3. Sort by score desc, then distance asc
   scored.sort((a, b) => {
     if (Math.abs(b.score - a.score) > 0.001) return b.score - a.score;
     return a.distance - b.distance;
   });
 
-  // 4. Return top 50
   return scored.slice(0, 50).map((s) => s.park);
 }
