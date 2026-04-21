@@ -1,7 +1,7 @@
 import { type SQLiteDatabase } from 'expo-sqlite';
 import { SEEDS, toFullPark } from '../constants/StateParksSeed';
 
-const SEED_KEY = 'seed_loaded_v2';
+const SEED_KEY = 'seed_loaded_v4';
 
 async function isSeedLoaded(db: SQLiteDatabase): Promise<boolean> {
   const row = await db.getFirstAsync<{ value: string }>(
@@ -9,6 +9,12 @@ async function isSeedLoaded(db: SQLiteDatabase): Promise<boolean> {
     [SEED_KEY],
   );
   return !!row;
+}
+
+// Escape single quotes for SQL string literals
+function escapeSQL(str: string | null): string {
+  if (str === null) return 'NULL';
+  return `'${str.replace(/'/g, "''")}'`;
 }
 
 export async function syncStateParksFromWikidata(
@@ -20,29 +26,24 @@ export async function syncStateParksFromWikidata(
   progressCallback?.('Loading state parks…');
   const now = Date.now();
 
-  // Wipe all existing state parks so seed is the authoritative list
-  await db.runAsync("DELETE FROM parks WHERE source = 'state'");
+  // Build all INSERT statements as a single SQL string for bulk execution
+  const statements: string[] = [
+    "DELETE FROM parks WHERE source = 'state';",
+  ];
 
   for (const seed of SEEDS) {
     const park = toFullPark(seed);
-    await db.runAsync(
-      `INSERT INTO parks
-        (id, source, full_name, description, state_codes, latitude, longitude,
-         designation, image_url, activities, entrance_fee_cents, raw_json, last_synced)
-       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-      [
-        park.id, park.source, park.fullName, park.description,
-        park.stateCodes, park.latitude, park.longitude, park.designation,
-        park.imageUrl, JSON.stringify(park.activities),
-        park.entranceFeeCents, park.rawJson, now,
-      ],
+    statements.push(
+      `INSERT INTO parks (id, source, full_name, description, state_codes, latitude, longitude, designation, image_url, activities, entrance_fee_cents, raw_json, last_synced) VALUES (${escapeSQL(park.id)}, ${escapeSQL(park.source)}, ${escapeSQL(park.fullName)}, ${escapeSQL(park.description)}, ${escapeSQL(park.stateCodes)}, ${park.latitude ?? 'NULL'}, ${park.longitude ?? 'NULL'}, ${escapeSQL(park.designation)}, ${escapeSQL(park.imageUrl)}, ${escapeSQL(JSON.stringify(park.activities))}, ${park.entranceFeeCents}, ${escapeSQL(park.rawJson)}, ${now});`
     );
   }
 
-  await db.runAsync(
-    'INSERT OR REPLACE INTO kv_store (key, value) VALUES (?, ?)',
-    [SEED_KEY, String(now)],
+  statements.push(
+    `INSERT OR REPLACE INTO kv_store (key, value) VALUES ('${SEED_KEY}', '${now}');`
   );
+
+  // Execute all statements at once - this is atomic and fast
+  await db.execAsync(statements.join('\n'));
 
   progressCallback?.(null);
 }

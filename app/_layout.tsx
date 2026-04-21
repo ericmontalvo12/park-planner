@@ -1,4 +1,4 @@
-import React, { useState, Suspense } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
@@ -7,7 +7,7 @@ import {
   useColorScheme,
 } from 'react-native';
 import { Stack } from 'expo-router';
-import { SQLiteProvider } from 'expo-sqlite';
+import { SQLiteProvider, openDatabaseAsync, type SQLiteDatabase } from 'expo-sqlite';
 import { StatusBar } from 'expo-status-bar';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { initDatabase } from '../db/migrations';
@@ -24,38 +24,25 @@ function SyncBanner({ message }: { message: string }) {
   );
 }
 
-function DbLoadingFallback() {
+function LoadingScreen({ message }: { message: string }) {
   const colorScheme = useColorScheme() ?? 'light';
   const colors = Colors[colorScheme];
   return (
     <View style={[styles.loadingContainer, { backgroundColor: colors.background }]}>
       <ActivityIndicator size="large" color={colors.tint} />
       <Text style={[styles.loadingText, { color: colors.subtext }]}>
-        Initialising database…
+        {message}
       </Text>
     </View>
   );
 }
 
-function AppNavigator({
-  setSyncSignal,
-  setSyncMessage,
-}: {
-  setSyncSignal: React.Dispatch<React.SetStateAction<number>>;
-  setSyncMessage: React.Dispatch<React.SetStateAction<string | null>>;
-}) {
+function AppStack() {
   const colorScheme = useColorScheme() ?? 'light';
   const colors = Colors[colorScheme];
 
   return (
-    <SQLiteProvider
-      databaseName="parkplanner.db"
-      onInit={async (db) => {
-        await initDatabase(db);
-        await syncNpsParks(db).catch(console.warn);
-        setSyncSignal((s) => s + 1);
-      }}
-    >
+    <>
       <StatusBar style="auto" />
       <Stack
         screenOptions={{
@@ -75,27 +62,72 @@ function AppNavigator({
           options={{ title: 'Park Details', headerBackTitle: 'Back' }}
         />
       </Stack>
-    </SQLiteProvider>
+    </>
   );
 }
 
 export default function RootLayout() {
+  const [db, setDb] = useState<SQLiteDatabase | null>(null);
+  const [isReady, setIsReady] = useState(false);
+  const [loadingMessage, setLoadingMessage] = useState('Initializing...');
   const [syncSignal, setSyncSignal] = useState(0);
   const [syncMessage, setSyncMessage] = useState<string | null>(null);
   const colorScheme = useColorScheme() ?? 'light';
   const colors = Colors[colorScheme];
 
+  useEffect(() => {
+    let mounted = true;
+
+    async function initialize() {
+      try {
+        setLoadingMessage('Opening database...');
+        const database = await openDatabaseAsync('parkplanner.db');
+        if (!mounted) return;
+        setDb(database);
+
+        setLoadingMessage('Setting up database...');
+        await initDatabase(database);
+
+        setLoadingMessage('Loading national parks...');
+        try {
+          await syncNpsParks(database);
+        } catch (e) {
+          console.warn('NPS sync failed:', e);
+        }
+
+        if (!mounted) return;
+        setSyncSignal((s) => s + 1);
+        setIsReady(true);
+      } catch (error) {
+        console.error('Database initialization failed:', error);
+        if (mounted) {
+          setLoadingMessage('Failed to initialize. Please restart the app.');
+        }
+      }
+    }
+
+    initialize();
+    return () => { mounted = false; };
+  }, []);
+
+  if (!isReady || !db) {
+    return (
+      <GestureHandlerRootView style={{ flex: 1 }}>
+        <View style={[styles.root, { backgroundColor: colors.background }]}>
+          <LoadingScreen message={loadingMessage} />
+        </View>
+      </GestureHandlerRootView>
+    );
+  }
+
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <View style={[styles.root, { backgroundColor: colors.background }]}>
-        <SyncSignalContext.Provider value={{ syncSignal }}>
-          <Suspense fallback={<DbLoadingFallback />}>
-            <AppNavigator
-              setSyncSignal={setSyncSignal}
-              setSyncMessage={setSyncMessage}
-            />
-          </Suspense>
-        </SyncSignalContext.Provider>
+        <SQLiteProvider databaseName="parkplanner.db">
+          <SyncSignalContext.Provider value={{ syncSignal }}>
+            <AppStack />
+          </SyncSignalContext.Provider>
+        </SQLiteProvider>
 
         {syncMessage ? <SyncBanner message={syncMessage} /> : null}
       </View>

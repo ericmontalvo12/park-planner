@@ -26,7 +26,7 @@ const ACTIVITIES = [
 
 const CAMPING_STYLES = [
   'Tent Camping', 'RV/Car Camping', 'Backcountry', 'Glamping', 'Cabin/Yurt',
-  'Group Camping', 'Beach Camping', 'Desert Camping', 'Alpine Camping', 'No Camping',
+  'Group Camping', 'Beach Camping', 'Desert Camping', 'Alpine Camping', 'Hammock Camping', 'No Camping',
 ];
 
 const SCENERY_VIBES = [

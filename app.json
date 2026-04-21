@@ -7,7 +7,6 @@
     "scheme": "parkplanner",
     "userInterfaceStyle": "automatic",
     "sdkVersion": "55.0.0",
-    "newArchEnabled": true,
     "icon": "./assets/icon.png",
     "splash": {
       "backgroundColor": "#2D7D46",
@@ -16,7 +15,6 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.ericmontalvo.parkplanner",
-      "minimumOsVersion": "16.0",
       "infoPlist": {
         "NSLocationWhenInUseUsageDescription": "Park Planner uses your location to find nearby parks.",
         "ITSAppUsesNonExemptEncryption": false
@@ -27,20 +25,27 @@
             "NSPrivacyCollectedDataType": "NSPrivacyCollectedDataTypePreciseLocation",
             "NSPrivacyCollectedDataTypeLinked": false,
             "NSPrivacyCollectedDataTypeTracking": false,
-            "NSPrivacyCollectedDataTypePurposes": ["NSPrivacyCollectedDataTypePurposeAppFunctionality"]
+            "NSPrivacyCollectedDataTypePurposes": [
+              "NSPrivacyCollectedDataTypePurposeAppFunctionality"
+            ]
           }
         ],
         "NSPrivacyAccessedAPITypes": [
           {
             "NSPrivacyAccessedAPIType": "NSPrivacyAccessedAPICategoryUserDefaults",
-            "NSPrivacyAccessedAPITypeReasons": ["CA92.1"]
+            "NSPrivacyAccessedAPITypeReasons": [
+              "CA92.1"
+            ]
           },
           {
             "NSPrivacyAccessedAPIType": "NSPrivacyAccessedAPICategoryFileTimestamp",
-            "NSPrivacyAccessedAPITypeReasons": ["C617.1"]
+            "NSPrivacyAccessedAPITypeReasons": [
+              "C617.1"
+            ]
           }
         ]
-      }
+      },
+      "buildNumber": "2"
     },
     "android": {
       "adaptiveIcon": {
@@ -69,13 +74,18 @@
         {
           "enableFTS": false
         }
-      ]
+      ],
+      "expo-font"
     ],
     "experiments": {
       "typedRoutes": true
     },
     "extra": {
-      "privacyPolicyUrl": "https://ericmontalvo12.github.io/park-planner/privacy"
+      "privacyPolicyUrl": "https://ericmontalvo12.github.io/park-planner/privacy",
+      "router": {},
+      "eas": {
+        "projectId": "ab5ec57f-d104-4c1c-ad26-03d5d9aee003"
+      }
     }
   }
 }
